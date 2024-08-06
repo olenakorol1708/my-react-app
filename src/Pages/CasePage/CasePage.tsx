@@ -1,8 +1,4 @@
-import React from "react";
-
-interface Props {}
-
-const CasePage = (props: Props) => {
+const CasePage = () => {
   return <div> Case Page</div>;
 };
 
