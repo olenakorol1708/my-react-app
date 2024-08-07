@@ -14,6 +14,7 @@ function App() {
           <Link to={paths.BLOG}>Blog</Link>
         </nav>
       </header>
+
       <br />
       <Outlet />
     </>
