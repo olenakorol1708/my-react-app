@@ -1,0 +1,47 @@
+.net-component {
+    position: fixed;
+    top: 0;
+    left: -52%;
+    width: 200%;
+    height: 130%;
+    overflow: hidden;
+    z-index: -1;
+
+    .net-svg {
+        position: absolute;
+        top: -10%;
+        left: -53%;
+        width: 210%;
+        height: 100%;
+
+
+        @media(max-width:1400px) {
+            top: -15%;
+            left: -48%;
+            width: 200%;
+            height: 100%;
+        }
+
+        @media(max-width:1200px) {
+            top: -15%;
+            left: -15%;
+            width: 170%;
+            height: 100%;
+        }
+
+        @media(max-width:768px) {
+            top: -34%;
+            left: -20%;
+            width: 140%;
+            height: 100%;
+
+        }
+
+        @media(max-width:480px) {
+            top: -45%;
+            left: -25%;
+            width: 150%;
+            height: 100%;
+        }
+    }
+}

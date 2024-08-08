@@ -1,5 +1,5 @@
 const PricePage = () => {
-  return <div>Pricing </div>;
+  return <div className="nav">Pricing </div>;
 };
 
 export default PricePage;

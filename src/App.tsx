@@ -1,16 +1,13 @@
 import "./App.scss";
 import { Link, Outlet } from "react-router-dom";
 import paths from "./Paths/paths";
+import NetComponent from "./Components/FirstScreen/Net-component/Net";
 
 function App() {
   return (
     <>
-
-      
-      <h1>Vite + React</h1>
-      
-     
       <header>
+        <NetComponent/>
         <nav>
           <Link to={paths.HOME}>Home</Link>
           <Link to={paths.CASE}>Case</Link>
@@ -22,7 +19,6 @@ function App() {
 
       <br />
       <Outlet />
-
     </>
   );
 }
