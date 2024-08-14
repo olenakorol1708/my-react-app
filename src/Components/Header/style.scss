@@ -1,0 +1,55 @@
+@import "../../Styles/variables.scss";
+
+.header_container {
+    max-width: px-to-rem(1413px);
+    margin: 0 auto;
+    max-height: px-to-rem(71px);
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+
+    .header_logo {
+        display: flex;
+        max-height: 100%;
+        padding-top: px-to-rem(18px);
+        margin-right:px-to-rem(160px)
+    }
+
+    .header_navigation {
+        display: flex;
+        gap: px-to-rem(35px);
+        align-items: center;
+        margin-right:px-to-rem(180px);
+        font-size: $main-font;
+        font-weight: 400;
+    }
+
+    .header_actions {
+        display: flex;
+        gap: px-to-rem(25px);
+        align-items: center;
+        padding-top: px-to-rem(14px);
+        padding-bottom: px-to-rem(17px);
+      
+
+        .contact-button_header {
+            padding: px-to-rem(10px) px-to-rem(35px);
+            cursor: pointer;
+            background: none;
+            color: $secondary-color;
+            font-size: $main-font;
+            font-weight: 400;
+        }
+
+        .get-started-button_header {
+            cursor: pointer;
+            padding: px-to-rem(13px) px-to-rem(18px) px-to-rem(12px);
+            background-color: $secondary-color;
+            border-radius: px-to-rem(10px);
+            font-weight: 800;
+        }
+    }
+}

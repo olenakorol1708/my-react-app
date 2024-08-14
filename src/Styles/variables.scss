@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Primary and Secondary Colors
 $primary-color: #ffffff;
 $secondary-color: #c3f00f;
@@ -41,4 +43,10 @@ $second-title-font:'Russo_one', sans-serif;
     src: url('../Fonts/Russo_One.ttf');
     font-weight: normal;
     font-style: normal;
+  }
+
+  //Size
+
+  @function px-to-rem($px, $base-font-size:16px){
+    @return math.div($px,$base-font-size)*1rem
   }
