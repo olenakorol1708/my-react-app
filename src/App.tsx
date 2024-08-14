@@ -1,11 +1,13 @@
 import "./App.scss";
 import { Link, Outlet } from "react-router-dom";
 import paths from "./Paths/paths";
+import NetComponent from "./Components/FirstScreen/Net-component/Net";
 
 function App() {
   return (
     <>
       <header>
+        <NetComponent/>
         <nav>
           <Link to={paths.HOME}>Home</Link>
           <Link to={paths.CASE}>Case</Link>
