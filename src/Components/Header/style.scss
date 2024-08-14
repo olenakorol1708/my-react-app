@@ -1,4 +1,8 @@
 @import "../../Styles/variables.scss";
+@import "include-media/dist/include-media";
+
+
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 .header_container {
     max-width: px-to-rem(1413px);
@@ -15,14 +19,14 @@
         display: flex;
         max-height: 100%;
         padding-top: px-to-rem(18px);
-        margin-right:px-to-rem(160px)
+        margin-right: px-to-rem(160px)
     }
 
     .header_navigation {
         display: flex;
         gap: px-to-rem(35px);
         align-items: center;
-        margin-right:px-to-rem(180px);
+        margin-right: px-to-rem(180px);
         font-size: $main-font;
         font-weight: 400;
     }
@@ -33,7 +37,7 @@
         align-items: center;
         padding-top: px-to-rem(14px);
         padding-bottom: px-to-rem(17px);
-      
+
 
         .contact-button_header {
             padding: px-to-rem(10px) px-to-rem(35px);
@@ -50,6 +54,48 @@
             background-color: $secondary-color;
             border-radius: px-to-rem(10px);
             font-weight: 800;
+        }
+    }
+
+    @include media(">=tablet") {
+
+        padding: px-to-rem(20px) px-to-rem(10px);
+
+        .header_logo {
+            max-height: 70%;
+            margin-right: 0px;
+            padding-top: 0;
+
+        }
+
+        .header_navigation {
+            gap: px-to-rem(15px);
+            margin-right: 0px;
+            font-size: px-to-rem(12px);
+            margin-bottom: px-to-rem(10px)
+        }
+
+        .header_actions {
+            gap: px-to-rem(5px);
+            margin-right: px-to-rem(35px);
+
+
+            .contact-button_header {
+                width: 100%;
+                text-align: center;
+                font-size: px-to-rem(12px);
+                padding: px-to-rem(25px) px-to-rem(35px) px-to-rem(35px);
+            }
+
+            .get-started-button_header {
+                width: 100%;
+                text-align: center;
+                padding: px-to-rem(5px) px-to-rem(38px) px-to-rem(5px);
+                font-size: px-to-rem(12px);
+                font-weight: 600;
+
+            }
+
         }
     }
 }
