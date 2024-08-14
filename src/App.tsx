@@ -1,8 +1,6 @@
 import "./App.scss";
 import { Outlet } from "react-router-dom";
-
-import NetComponent from "./Components/FirstScreen/Net-component/Net";
-import Header from "./Components/Header/Header";
+import { NetComponent, Header } from "./Components"
 
 function App() {
   return (
