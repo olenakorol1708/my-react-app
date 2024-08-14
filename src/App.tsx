@@ -5,11 +5,6 @@ import paths from "./Paths/paths";
 function App() {
   return (
     <>
-
-      
-      <h1>Vite + React</h1>
-      
-     
       <header>
         <nav>
           <Link to={paths.HOME}>Home</Link>
@@ -22,7 +17,6 @@ function App() {
 
       <br />
       <Outlet />
-
     </>
   );
 }
