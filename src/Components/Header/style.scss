@@ -5,9 +5,10 @@
 $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 .header_container {
-    max-width: px-to-rem(1413px);
+    padding-top: px-to-rem(10px);
+    padding-left:px-to-rem(168px);
+    max-width: px-to-rem(1440px);
     margin: 0 auto;
-    max-height: px-to-rem(71px);
     display: flex;
     position: fixed;
     justify-content: space-between;
@@ -17,85 +18,99 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
     .header_logo {
         display: flex;
-        max-height: 100%;
-        padding-top: px-to-rem(18px);
-        margin-right: px-to-rem(160px)
+        max-width: 100%;
+        margin-left:-50px;
     }
+
+    nav {
+        a {
+           
+            text-decoration: none;
+            color: $primary-color;
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: calm (px-to-rem(16px), 2.5vw,px-to-rem(28px));
+            letter-spacing: 0.03em;
+          
+
+
+        }
+
+        
+    }
+
 
     .header_navigation {
         display: flex;
-        gap: px-to-rem(35px);
+        gap: px-to-rem(38px);
         align-items: center;
-        margin-right: px-to-rem(180px);
-        font-size: $main-font;
-        font-weight: 400;
+        padding-left:px-to-rem(140px);
+        padding-top: px-to-rem(14px);
+        padding-bottom: px-to-rem(17px);
     }
 
     .header_actions {
         display: flex;
-        gap: px-to-rem(25px);
-        align-items: center;
-        padding-top: px-to-rem(14px);
-        padding-bottom: px-to-rem(17px);
-
+        justify-content: space-between;
+        padding-right:100px;
 
         .contact-button_header {
-            padding: px-to-rem(10px) px-to-rem(35px);
+            display:flex;
+            padding: px-to-rem(10px) px-to-rem(25px);
             cursor: pointer;
             background: none;
             color: $secondary-color;
-            font-size: $main-font;
+            font-size: px-to-rem(18px) !important;
             font-weight: 400;
+            white-space: nowrap;
+
         }
 
         .get-started-button_header {
+            display:flex;
             cursor: pointer;
-            padding: px-to-rem(13px) px-to-rem(18px) px-to-rem(12px);
+            padding: px-to-rem(10px) px-to-rem(18px) px-to-rem(10px);
             background-color: $secondary-color;
             border-radius: px-to-rem(10px);
-            font-weight: 800;
+            font-weight: 400;
+            white-space: nowrap;
+            font-size: px-to-rem(16px) !important;
+            font-weight: 600 !important;
+            margin-right:px-to-rem(20px)
         }
     }
 
-    @include media(">=tablet") {
 
-        padding: px-to-rem(20px) px-to-rem(10px);
+    .header_burger {
+        display: none;
+    }
+
+    @include media("<=tablet") {
+        .header_container {
+display:flex;
+padding: px-to-rem(20px);
+justify-content: space-between;
 
         .header_logo {
-            max-height: 70%;
-            margin-right: 0px;
-            padding-top: 0;
-
+            display: flex;
+            max-width: 50%
         }
-
         .header_navigation {
-            gap: px-to-rem(15px);
-            margin-right: 0px;
-            font-size: px-to-rem(12px);
-            margin-bottom: px-to-rem(10px)
+          display: none;
+            
         }
 
         .header_actions {
-            gap: px-to-rem(5px);
-            margin-right: px-to-rem(35px);
-
-
             .contact-button_header {
-                width: 100%;
-                text-align: center;
-                font-size: px-to-rem(12px);
-                padding: px-to-rem(25px) px-to-rem(35px) px-to-rem(35px);
+              display: none; // Hide contact button on tablets
             }
-
             .get-started-button_header {
-                width: 100%;
-                text-align: center;
-                padding: px-to-rem(5px) px-to-rem(38px) px-to-rem(5px);
-                font-size: px-to-rem(12px);
-                font-weight: 600;
-
-            }
-
-        }
+                font-size: px-to-rem(14px); // Slightly adjust button size for better fit on tablet
+                padding: px-to-rem(8px) px-to-rem(16px); // Adjust padding for tablet
+              }
+            }}
+        .header_burger {
+            display: flex;
+            cursor:pointer;
+        }}
     }
-}

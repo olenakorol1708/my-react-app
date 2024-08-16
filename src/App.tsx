@@ -4,7 +4,7 @@ import { NetComponent, Header } from "./Components"
 
 function App() {
   return (
-    <>
+    <div className="wrapper">
       <header>
         <NetComponent/>
         <Header/>
@@ -13,7 +13,7 @@ function App() {
 
       <br />
       <Outlet />
-    </>
+    </div>
   );
 }
 
