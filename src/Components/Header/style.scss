@@ -1,12 +1,10 @@
-@import "../../Styles/variables.scss";
-@import "include-media/dist/include-media";
-
-
+@import '../../Styles/index.scss';
 $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
 .header_container {
     padding-top: px-to-rem(10px);
-    padding-left:px-to-rem(168px);
+    padding-left: clamp(50px, 5vw, 168px);
+    padding-right: clamp(50px, 5vw, 168px);
     max-width: px-to-rem(1440px);
     margin: 0 auto;
     display: flex;
@@ -19,32 +17,35 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
     .header_logo {
         display: flex;
         max-width: 100%;
-        margin-left:-50px;
+        margin-left: -50px;
+        height: auto;
     }
 
     nav {
         a {
-           
             text-decoration: none;
             color: $primary-color;
             font-family: $main-font;
             font-weight: 400;
-            font-size: calm (px-to-rem(16px), 2.5vw,px-to-rem(28px));
             letter-spacing: 0.03em;
-          
-
-
+            white-space: nowrap;
         }
-
-        
     }
 
+    nav a {
+        font-size: 28px;
+
+        @media(max-width:1200px) {
+            font-size: 18px;
+        }
+
+    }
 
     .header_navigation {
         display: flex;
-        gap: px-to-rem(38px);
+        gap: clamp(10px, 5vw, 38px);
         align-items: center;
-        padding-left:px-to-rem(140px);
+        padding-left: 150px;
         padding-top: px-to-rem(14px);
         padding-bottom: px-to-rem(17px);
     }
@@ -52,65 +53,90 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
     .header_actions {
         display: flex;
         justify-content: space-between;
-        padding-right:100px;
+        padding-right: 80px;
 
         .contact-button_header {
-            display:flex;
+            display: flex;
             padding: px-to-rem(10px) px-to-rem(25px);
             cursor: pointer;
             background: none;
             color: $secondary-color;
-            font-size: px-to-rem(18px) !important;
+            font-size: px-to-rem(18px);
             font-weight: 400;
             white-space: nowrap;
-
         }
 
         .get-started-button_header {
-            display:flex;
+            display: flex;
             cursor: pointer;
             padding: px-to-rem(10px) px-to-rem(18px) px-to-rem(10px);
             background-color: $secondary-color;
             border-radius: px-to-rem(10px);
-            font-weight: 400;
+            font-weight: 600;
             white-space: nowrap;
-            font-size: px-to-rem(16px) !important;
-            font-weight: 600 !important;
-            margin-right:px-to-rem(20px)
+            font-size: px-to-rem(16px);
+            margin-right: -40px;
         }
     }
-
 
     .header_burger {
         display: none;
     }
 
-    @include media("<=tablet") {
-        .header_container {
-display:flex;
-padding: px-to-rem(20px);
-justify-content: space-between;
 
-        .header_logo {
-            display: flex;
-            max-width: 50%
-        }
+    @include media("<=desktop") {
         .header_navigation {
-          display: none;
-            
+            display: none;
         }
 
         .header_actions {
+            justify-content: flex-end;
+        }
+
+        .header_actions {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 80px;
+            padding-left: -160px;
+
             .contact-button_header {
-              display: none; // Hide contact button on tablets
+                display: none;
             }
+
             .get-started-button_header {
-                font-size: px-to-rem(14px); // Slightly adjust button size for better fit on tablet
-                padding: px-to-rem(8px) px-to-rem(16px); // Adjust padding for tablet
-              }
-            }}
+                display: flex;
+                justify-content: flex-end;
+                white-space: nowrap;
+                font-size: px-to-rem(16px);
+
+            }
+        }
+
         .header_burger {
             display: flex;
-            cursor:pointer;
-        }}
+            cursor: pointer;
+            background: none;
+            padding-right: 30px;
+
+        }
+
     }
+
+    @include media("<=tablet") {
+        .header_actions {
+            display: flex;
+            justify-content: flex-end;
+
+            .get-started-button_header {
+                display: flex;
+                justify-content: flex-end;
+
+            }
+        }
+
+        .header_burger {
+            padding-right: 20px;
+
+        }
+    }
+}
