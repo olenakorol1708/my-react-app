@@ -28,10 +28,7 @@ const Navbar = () => {
             <li>
               <Link to={paths.BLOG}>Blog</Link>
             </li>
-            <li>
-              {" "}
-              <Link to={paths.HOME}></Link>
-            </li>
+           
           </ul>
           <div className="action_button">
           <button className="contact-us_button">Contact us</button>
