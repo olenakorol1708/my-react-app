@@ -1,5 +1,14 @@
+import { NetComponent } from "../../Components";
+import {Showcase} from "../../Components"
+
 const HomePage = () => {
-  return <div className="nav">IT'S A HOME PAGE </div>;
+  return <>
+  
+       <NetComponent/>
+       <Showcase/>
+  
+  
+  </>;
 };
 
 export default HomePage;

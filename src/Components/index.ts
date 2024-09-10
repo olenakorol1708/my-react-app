@@ -1,3 +1,4 @@
 
 export * from "./FirstScreen";
-export * from "./Header";
+export *from "./Navbar";
+export *from "./Showcase";

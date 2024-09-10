@@ -9,33 +9,18 @@
 *{
   margin: 0px;
   padding: 0px;
-  border:none;
-}
-*,
-*::before,
-*::after{
   box-sizing: border-box;
 }
 
+
 body {
-  
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: $main-font;
   background-color: $background-color;
   
 }
-.wrapper
-{ display:flex;
-  text-align: center;
-  margin:0 auto;
-  padding:px-to-rem(14px);
-  max-width:1440px;
-  
+.container{
+max-width: 1440px;
+width:100%;
+margin:0 auto;
+}
 
-}
-h1 {
-  font-size: 3.2em;
-  font-weight: 700;
-  line-height: 1.1;
-  color: $primary-color;
-}

@@ -1,19 +1,19 @@
 import "./App.scss";
+
+import { Navbar } from "./Components";
 import { Outlet } from "react-router-dom";
-import { NetComponent, Header } from "./Components"
 
 function App() {
   return (
-    <div className="wrapper">
+    <>
       <header>
-        <NetComponent/>
-        <Header/>
-       
+        <Navbar />
       </header>
-
-      <br />
-      <Outlet />
-    </div>
+      <main>
+        <Outlet />
+      </main>
+      <footer></footer>
+    </>
   );
 }
 

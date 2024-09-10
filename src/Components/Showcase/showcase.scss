@@ -1,0 +1,140 @@
+@import '../../Styles/index.scss';
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+.showcase_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    margin-top: -80px;
+    
+   
+}
+
+.showcase_img {
+    object-fit: cover;
+}
+
+.image2 {
+    transform: translateY(-10%);
+    
+}
+
+.image1 {
+    transform: translateY(20%);
+}
+
+.titleImg {
+    width: 10vw;
+}
+
+.showcase_content h2 {
+    color: $primary-color;
+    font-size: 4vw;
+    padding: 1rem;
+    overflow: hidden;
+    transform: translateY(-10%);
+
+}
+
+.green_title {
+    color: $secondary-color;
+}
+
+.titleImg {
+    padding-top: 1rem;
+}
+
+@media (min-width: 1440px) {
+
+    .image2 {
+        transform: translateX(93%);
+        
+          }
+
+    .image1 {
+        transform: translateX(-100%);
+        
+    }
+}
+
+.arrow_animation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translateY(-80%);
+    border: 1px solid red;
+}
+
+.main-arrow_animation {
+    display: flex;
+    fill: $primary-color;
+    font-size: 19.5px;
+    border: 1px solid red;
+}
+
+.main-brief_desc {
+    display: flex;
+    width: 30%;
+    color: $primary-color;
+    font-family: $main-font;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2rem;
+    border: 1px solid red;
+}
+
+#curve {
+    fill: transparent;
+}
+
+.text {
+    transform-origin: 50% 50%;
+    animation: rotate 15s linear infinite;
+    color: $primary-color;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@include media("<=tablet") {
+    .titleImg {
+        display: none;
+    }
+
+    .showcase_content h2 {
+        color: $primary-color;
+        font-size: 40px;
+        padding: 1rem;
+        overflow: hidden;
+        transform: translateY(-50%);
+
+    }
+
+    .arrow_animation {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        transform: translateY(-200px);
+    }
+
+    .main-brief_desc {
+        padding-left: 4rem;
+        order: 0;
+        transform: translateY(-50%);
+        line-height: 2rem;
+        width: 70%
+    }
+
+    .main-arrow_animation {
+        order: 1;
+    }
+}
