@@ -1,9 +1,9 @@
 const paths = {
-  HOME: "/",
-  CASE: "/case",
-  PRICE: "/price",
-  ABOUT: "/about",
-  BLOG: "/blog",
+  HOME: '/',
+  CASE: '/case',
+  PRICE: '/price',
+  ABOUT: '/about',
+  BLOG: '/blog',
 } as const;
 
 export default paths;

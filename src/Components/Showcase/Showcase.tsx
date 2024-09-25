@@ -1,9 +1,8 @@
-import React from "react";
-import "./showcase.scss";
-import leftImage from "@images/Homepage/homepageLeft.svg";
-import rightImage from "@images/Homepage/homepageRight.svg";
-import titleImage from "@images/Homepage/titleImg.svg";
-import arrow from "@images/Homepage/arrow.svg";
+import './showcase.scss';
+import leftImage from '@/images/Homepage/homepageLeft.svg';
+import rightImage from '@/images/Homepage/homepageRight.svg';
+import titleImage from '@/images/Homepage/titleImg.svg';
+import arrow from '@/images/Homepage/arrow.svg';
 
 const Showcase = () => {
   return (
@@ -15,11 +14,11 @@ const Showcase = () => {
           </div>
           <div className="showcase_content">
             <h2>
-              Your all-in-one creative and{" "}
+              Your all-in-one creative and{' '}
               <span className="green_title">
-                design thinking &nbsp;
+                design thinking
                 <img className="titleImg" src={titleImage} alt="Title Image" />
-                <br/> agency
+                <br /> agency
               </span>
             </h2>
           </div>
@@ -43,7 +42,7 @@ const Showcase = () => {
           </div>
           <div className="main-brief_desc">
             <p className="main-brief_text">
-              {" "}
+              {' '}
               As a creative design agency specializing in UI/UX, we are
               dedicated to remaining digital products for brands looking to
               refresh their identity.

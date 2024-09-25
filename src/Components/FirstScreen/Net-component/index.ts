@@ -1,2 +1,1 @@
-
-export { default as NetComponent } from "./Net";
+export { default as NetComponent } from './Net';

@@ -1,14 +1,14 @@
-import { NetComponent } from "../../Components";
-import {Showcase} from "../../Components"
+
+import { NetComponent, Showcase, InfiniteSlider } from '../../Components/index';
 
 const HomePage = () => {
-  return <>
-  
-       <NetComponent/>
-       <Showcase/>
-  
-  
-  </>;
+  return (
+    <>
+      <NetComponent />
+      <Showcase />
+      <InfiniteSlider />
+    </>
+  );
 };
 
 export default HomePage;

@@ -1,40 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import paths from '@paths/paths';
 import Logo from '@images/XriiLogo/gradient_logo.svg';
+import Burger from '@images/Homepage/burgerMenu.svg';
+import './navbar.scss';
 
+const menuLinksConfigs = [
+  { path: paths.HOME, name: 'Home' },
+  { path: paths.CASE, name: 'Case Studies' },
+  { path: paths.PRICE, name: 'Pricing' },
+  { path: paths.ABOUT, name: 'About' },
+  { path: paths.BLOG, name: 'Blog' },
+];
 
-import "./navbar.scss";
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-const Navbar = () => {
+  const toggleMenu = (): void => {
+    setIsOpen(prevIsOpen => !prevIsOpen);
+  };
+
   return (
-    <div className = "header">
+    <div className="header">
       <div className="container">
         <nav>
-        <Link to={paths.HOME}> <div className="logo"><img src={Logo} alt = "Logo"/></div></Link>
-          <ul>
-           <li><Link to={paths.HOME}>Home</Link></li>
-            <li>
-              <Link to={paths.CASE}>Case studies</Link>
-            </li>
-            <li>
-              {" "}
-              <Link to={paths.PRICE}>Pricing</Link>
-            </li>
-            <li>
-              {" "}
-              <Link to={paths.ABOUT}>About</Link>
-            </li>
-            <li>
-              <Link to={paths.BLOG}>Blog</Link>
-            </li>
-           
+          <Link to={paths.HOME}>
+            <div className="logo">
+              <img src={Logo} alt="Logo" />
+            </div>
+          </Link>
+
+          <ul className={isOpen ? 'nav-link active' : 'nav-link'}>
+            {menuLinksConfigs.map(link => (
+              <li key={link.path}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
           </ul>
+
           <div className="action_button">
-          <button className="contact-us_button">Contact us</button>
-          <button className="get-started_button">Get started</button>
+            <button className="contact-us_button">Contact us</button>
+            <button className="get-started_button">Get started</button>
           </div>
-          
+
+          <div className="burger" onClick={toggleMenu}>
+            <img src={Burger} alt="menu_icon" />
+          </div>
         </nav>
       </div>
     </div>
