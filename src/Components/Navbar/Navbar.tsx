@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import paths from '@paths/paths';
-import Logo from '@images/XriiLogo/gradient_logo.svg';
-import Burger from '@images/Homepage/burgerMenu.svg';
+import paths from '../../Paths/paths';
+import Logo from '@/images/XriiLogo/gradient_logo.svg';
+import Burger from '@/images/Homepage/burgerMenu.svg';
 import './navbar.scss';
 
 const menuLinksConfigs = [
