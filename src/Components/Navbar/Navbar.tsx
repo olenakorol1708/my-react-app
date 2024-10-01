@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import paths from '@/paths/paths';
+import { Link,useNavigate } from 'react-router-dom';
 import Logo from '@/images/XriiLogo/gradient_logo.svg';
 import Burger from '@/images/Homepage/burgerMenu.svg';
 import './navbar.scss';
@@ -15,7 +15,10 @@ const menuLinksConfigs = [
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  const navigate = useNavigate();
+ const handleRegisterClick = ()=>{
+  navigate('/register')
+ }
   const toggleMenu = (): void => {
     setIsOpen(prevIsOpen => !prevIsOpen);
   };
@@ -40,7 +43,7 @@ const Navbar: React.FC = () => {
 
           <div className="action_button">
             <button className="contact-us_button">Contact us</button>
-            <button className="get-started_button">Get started</button>
+            <button onClick ={handleRegisterClick} className="get-started_button">Get started</button>
           </div>
 
           <div className="burger" onClick={toggleMenu}>
