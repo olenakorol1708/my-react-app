@@ -1,3 +1,9 @@
+
+.blur-background{
+  
+  filter:blur(5px);
+  transition:filter 0.3s ease;
+}
 .form {
   .contact_us_text {
     font-size: 40px;
@@ -38,7 +44,8 @@
       border: 1px solid #d1d0d0;
       font-size: 16px;
       font-family: $main-font;
-      color: #243843 !important;
+      // color: #243843 !important;
+      color:white;
 
       &::placeholder {
         color: white !important;
@@ -53,4 +60,4 @@
       font-weight: bold;
     }
   }
-}
+}  
