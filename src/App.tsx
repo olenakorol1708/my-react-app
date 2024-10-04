@@ -1,7 +1,7 @@
-import "./App.scss";
+import './App.scss';
 
-import { Navbar } from "./Components";
-import { Outlet } from "react-router-dom";
+import { Navbar } from './Components';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (

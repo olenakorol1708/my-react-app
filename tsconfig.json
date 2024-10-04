@@ -9,12 +9,11 @@
     }
   ],
   "compilerOptions": {
-    "baseUrl": "./", 
+    "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@images/*": ["src/images/*"],
-      "@paths/*":["src/Paths/*"] 
+      "@/components/*": ["src/Components/*"],
+      "@/images/*": ["src/images/*"],
+      "@/paths/*": ["src/Paths/*"]
     }
   }
-  
 }

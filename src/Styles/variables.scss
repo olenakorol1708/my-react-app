@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // Primary and Secondary Colors
 $primary-color: #ffffff;
@@ -14,39 +14,39 @@ $line-color: #334855;
 $round-color: #1e2e38;
 
 // Fonts
-$main-font:'Proxima Nova',sans-serif;
-$title-font:'PolySans', sans-serif;
-$second-title-font:'Russo_one', sans-serif;
+$main-font: 'Proxima Nova', sans-serif;
+$title-font: 'PolySans', sans-serif;
+$second-title-font: 'Russo_one', sans-serif;
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../Fonts/Proxima\ Nova\ Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../Fonts/Proxima\ Nova\ Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'PolySans';
-    src: url('../Fonts/PolySans\ Slim.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Proxima Nova';
+  src: url('../Fonts/Proxima\ Nova\ Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../Fonts/Proxima\ Nova\ Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Russo_One';
-    src: url('../Fonts/Russo_One.ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'PolySans';
+  src: url('../Fonts/PolySans\ Slim.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  //Size
+@font-face {
+  font-family: 'Russo_One';
+  src: url('../Fonts/Russo_One.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @function px-to-rem($px, $base-font-size:16px){
-    @return math.div($px,$base-font-size)*1rem
-  }
+//Size
+
+@function px-to-rem($px, $base-font-size: 16px) {
+  @return math.div($px, $base-font-size) * 1rem;
+}

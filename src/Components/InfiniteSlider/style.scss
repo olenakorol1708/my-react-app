@@ -1,0 +1,51 @@
+.wrapper {
+  width: 100%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  margin-top: -2rem;
+  overflow: hidden;
+
+  @keyframes scrollLeft {
+    to {
+      left: -250px;
+    }
+  }
+
+  .item {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    left: max(calc(250px * 6), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+  }
+
+  .item1 {
+    animation-delay: calc((30s / 6) * (6 - 1) * -1);
+  }
+
+  .item2 {
+    animation-delay: calc((30s / 6) * (6 - 2) * -1);
+  }
+
+  .item3 {
+    animation-delay: calc((30s / 6) * (6 - 3) * -1);
+  }
+
+  .item4 {
+    animation-delay: calc((30s / 6) * (6 - 4) * -1);
+  }
+
+  .item5 {
+    animation-delay: calc((30s / 6) * (6 - 5) * -1);
+  }
+
+  .item6 {
+    animation-delay: calc((30s / 6) * (6 - 6) * -1);
+  }
+}

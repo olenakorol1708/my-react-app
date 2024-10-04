@@ -1,2 +1,1 @@
-
-export * from "./Net-component";
+export * from './Net-component';
