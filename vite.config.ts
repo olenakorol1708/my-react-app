@@ -5,20 +5,20 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), svgr()],
-  
+
   server: {
     open: true,
   },
-  
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@images': path.resolve(__dirname, 'src/images'),
-      '@paths': path.resolve(__dirname, 'src/Paths'),
-      '@components': path.resolve(__dirname, 'src/Components'),
+      '@/images': path.resolve(__dirname, 'src/images'),
+      '@/paths': path.resolve(__dirname, 'src/Paths'),
+      '@/components': path.resolve(__dirname, 'src/Components'),
     },
   },
-  
+
   css: {
     preprocessorOptions: {
       scss: {
