@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
-    "antd": "^5.20.0",
+    "antd": "^5.21.1",
     "include-media": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

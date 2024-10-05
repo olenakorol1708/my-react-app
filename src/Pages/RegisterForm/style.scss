@@ -1,0 +1,56 @@
+.form {
+  .contact_us_text {
+    font-size: 40px;
+    padding-right: 1rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .contact_us_text:last-child {
+    color: $secondary-color;
+  }
+
+  .ant-form {
+    padding: 2rem !important;
+    margin: 0 auto;
+    position: relative;
+
+    .ant-form-item-label>label {
+      color: white;
+    }
+
+    .ant-form-item-required::before {
+      content: '*';
+      color: $secondary-color !important;
+    }
+
+    button {
+      background-color: $secondary-color !important;
+      color: $background-color;
+      font-size: 16px;
+      font-family: $main-font;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    input {
+      background-color: #243843;
+      border: 1px solid #d1d0d0;
+      font-size: 16px;
+      font-family: $main-font;
+      color: #243843 !important;
+
+      &::placeholder {
+        color: white !important;
+      }
+
+    }
+
+    .input-warning {
+      color: red;
+      font-size: 14px;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  }
+}

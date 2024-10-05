@@ -1,5 +1,6 @@
 const paths = {
   HOME: '/',
+  REGISTER:'/register',
   CASE: '/case',
   PRICE: '/price',
   ABOUT: '/about',
