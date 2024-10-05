@@ -1,11 +1,12 @@
 .wrapper {
   width: 100%;
-  max-width: 1440px;
+  max-width: 120vw;
   margin-inline: auto;
   position: relative;
-  height: 100px;
-  margin-top: -2rem;
-  overflow: hidden;
+  height: 160px;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+
 
   @keyframes scrollLeft {
     to {
@@ -22,9 +23,10 @@
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-   
+
   }
-    .item1 {
+
+  .item1 {
     animation-delay: calc((30s / 6) * (6 - 1) * -1);
   }
 

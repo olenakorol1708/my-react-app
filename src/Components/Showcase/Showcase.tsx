@@ -1,10 +1,19 @@
 import './showcase.scss';
+import message from '@/images/Homepage/message.webp'
 import leftImage from '@/images/Homepage/homepageLeft.svg';
 import rightImage from '@/images/Homepage/homepageRight.svg';
 import titleImage from '@/images/Homepage/titleImg.svg';
 import arrow from '@/images/Homepage/arrow.svg';
 
-const Showcase = () => {
+import { useNavigate } from 'react-router-dom';
+
+
+const Showcase:React.FC= () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = ()=>{
+    navigate('/register')
+  }
   return (
     <section id="showcase">
       <div className="container">
@@ -47,7 +56,12 @@ const Showcase = () => {
               dedicated to remaining digital products for brands looking to
               refresh their identity.
             </p>
+           
           </div>
+          
+        </div>
+        <div className='message'>
+          <img className = "message-icon" src = {message} alt = "Message-icon" onClick = {handleNavigate} />
         </div>
       </div>
     </section>
