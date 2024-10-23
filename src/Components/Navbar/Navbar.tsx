@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import paths from '@/paths/paths';
+import paths from '../../Paths/paths'
 
 import { Link, useNavigate } from 'react-router-dom';
 

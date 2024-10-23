@@ -1,0 +1,19 @@
+.form-item {
+    display: flex; /* Use flexbox to align label and input */
+    align-items: center; /* Align labels and inputs vertically in the center */
+  }
+  
+  .ant-form-item-label > label {
+    width: 150px; /* Set a fixed width for the label */
+    text-align: right; /* Align the label text to the right */
+    margin-right: 20px; /* Add some space between the label and the input */
+  }
+  
+  .form-input {
+    flex: 1; /* Make the input take up the remaining space */
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Make sure the input takes the full remaining width */
+    
+  }
+  
