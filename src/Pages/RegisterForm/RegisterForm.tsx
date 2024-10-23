@@ -59,7 +59,7 @@ const RegisterForm:React.FC = () => {
           <span className="contact_us_text">Contact</span>
           <span className="contact_us_text">us</span>
         </div>
-      {isMobile ? (<MobileForm formData = {formData} handleInputChange = {handleInputChange} onFinish = {onFinish}/>) :
+      {isMobile ? (<MobileForm formData = {formData} handleInputChange = {handleInputChange} onFinish = {onFinish}  formFields = {formFields}/>) :
       (<DesktopForm formData = {formData} handleInputChange = {handleInputChange} onFinish = {onFinish} formFields = {formFields}/>)}
       <ModalWindow isModalVisible={isModalVisible} handleModalClose={handleModalClose} formFields = {formFields} />
     </div>

@@ -4,36 +4,8 @@ import FormField from '../FormField/FormField';
 import '../registerForm.scss'
 import './style.scss';
 
-const MobileForm: React.FC<{ formData: any, handleInputChange: any, onFinish: any }> = ({ formData, handleInputChange, onFinish }) => {
-  const formFields = [
-    {
-      label: 'First Name',
-      name: 'firstName',
-      placeholder: 'Olivia Smith',
-      rules: [
-        { required: true, message: 'Please input your name!' },
-        { min: 3, message: 'Name must be at least 3 characters long' },
-      ],
-    },
-    {
-      label: 'Business Email',
-      name: 'businessEmail',
-      placeholder: 'business@gmail.com',
-      rules: [
-        { required: true, message: 'Please input your email!' },
-        { type: 'email', message: 'The input is not valid E-mail!' },
-      ],
-    },
-    {
-      label: 'Company Name',
-      name: 'companyName',
-      placeholder: 'Business Name',
-      rules: [
-        { required: true, message: 'Please input your company name!' },
-        { min: 3, message: 'Company name must be at least 3 characters long' },
-      ],
-    },
-  ];
+const MobileForm: React.FC<{formFields:any[]; formData: any, handleInputChange: any, onFinish: any }> = ({ formFields, formData, handleInputChange, onFinish }) => {
+ 
   return (
     <>
 
