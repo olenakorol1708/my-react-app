@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  max-width: 1536px;
+  max-width: 1440px;
   margin-inline: auto;
   position: relative;
   height: 100px;
@@ -22,10 +22,9 @@
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    overflow: hidden;
+   
   }
-
-  .item1 {
+    .item1 {
     animation-delay: calc((30s / 6) * (6 - 1) * -1);
   }
 
