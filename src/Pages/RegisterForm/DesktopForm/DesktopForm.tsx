@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'antd';
+import { Form } from 'antd';
+import SubmitButton from '../SubmitButton/SubmitButton';
 import FormField from '../FormField/FormField';
 import '../MobileForm/style.scss';
 
 type LayoutType = Parameters<typeof Form>[0]['layout'];
 
-const DesktopForm: React.FC<{ formFields:any[]; formData: any; handleInputChange: any, onFinish: any }> = ({
+const DesktopForm: React.FC<{ formFields: any[]; formData: any; handleInputChange: any, onFinish: any, loading:boolean}> = ({
   formFields,
   formData,
   handleInputChange,
   onFinish,
+  loading
 }) => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState<LayoutType>('horizontal');
 
- 
+
 
   const onFormLayoutChange = ({ layout }: { layout: LayoutType }) => {
     setFormLayout(layout);
@@ -45,9 +47,7 @@ const DesktopForm: React.FC<{ formFields:any[]; formData: any; handleInputChange
           />
         ))}
         <Form.Item >
-          <Button type="primary" block htmlType="submit">
-            Submit
-          </Button>
+          <SubmitButton loading = {loading} />
         </Form.Item>
       </Form>
     </div>

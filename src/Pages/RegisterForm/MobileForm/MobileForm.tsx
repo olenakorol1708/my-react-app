@@ -1,16 +1,26 @@
 import React from 'react';
-import { Button, Form} from 'antd';
+import { Form } from 'antd';
 import FormField from '../FormField/FormField';
-import '../registerForm.scss'
+import SubmitButton from '../SubmitButton/SubmitButton';
+import '../registerForm.scss';
 import './style.scss';
 
-const MobileForm: React.FC<{formFields:any[]; formData: any, handleInputChange: any, onFinish: any }> = ({ formFields, formData, handleInputChange, onFinish }) => {
- 
+const MobileForm: React.FC<{
+  formFields: any[];
+  formData: any;
+  handleInputChange: any;
+  onFinish: any;
+  loading:boolean
+}> = ({ formFields, formData, handleInputChange, onFinish, loading }) => {
   return (
     <>
-
-      <Form className="form-container" name="form_item_path" layout="vertical" onFinish={onFinish}>
-        {formFields.map((field) => (
+      <Form
+        className="form-container"
+        name="form_item_path"
+        layout="vertical"
+        onFinish={onFinish}
+      >
+        {formFields.map(field => (
           <FormField
             key={field.name}
             label={field.label}
@@ -22,15 +32,11 @@ const MobileForm: React.FC<{formFields:any[]; formData: any, handleInputChange: 
             isMobile={true}
           />
         ))}
-        <Button type="primary" block htmlType="submit">
-          Submit
-        </Button>
+
+        <SubmitButton loading = {loading} />
       </Form>
-
-
-
     </>
   );
 };
 
-export default MobileForm;            
+export default MobileForm;
