@@ -1,18 +1,18 @@
-import React from 'react'
-import { Button} from 'antd';
+import React from 'react';
+import { Button } from 'antd';
 
-interface SubmitButtonProps{
-    loading:boolean;
+interface SubmitButtonProps {
+  loading: boolean;
 }
 
-const SubmitButton:React.FC<SubmitButtonProps> = ({loading}) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ loading }) => {
   return (
     <div>
-      <Button type="primary" block htmlType="submit" loading ={loading} >
+      <Button type="primary" block htmlType="submit" loading={loading}>
         Submit
-        </Button>
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default SubmitButton
+export default SubmitButton;

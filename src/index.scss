@@ -14,11 +14,24 @@
 body {
   font-family: $main-font;
   background-color: $background-color;
-  
+  min-width: 360px;
 }
 .container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
- 
+}
+$breakpoints: (
+  phone: 320px,
+  tablet: 768px,
+  desktop: 1200px,
+);
+
+@media (max-width: map-get($breakpoints, desktop)) {
+}
+
+@media (max-width: map-get($breakpoints, tablet)) {
+}
+
+@media (max-width: map-get($breakpoints, phone)) {
 }

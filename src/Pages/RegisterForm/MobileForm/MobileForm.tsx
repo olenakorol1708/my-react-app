@@ -10,7 +10,7 @@ const MobileForm: React.FC<{
   formData: any;
   handleInputChange: any;
   onFinish: any;
-  loading:boolean
+  loading: boolean;
 }> = ({ formFields, formData, handleInputChange, onFinish, loading }) => {
   return (
     <>
@@ -33,7 +33,7 @@ const MobileForm: React.FC<{
           />
         ))}
 
-        <SubmitButton loading = {loading} />
+        <SubmitButton loading={loading} />
       </Form>
     </>
   );

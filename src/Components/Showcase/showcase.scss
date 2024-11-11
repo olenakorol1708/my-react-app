@@ -1,291 +1,206 @@
 @import '../../Styles/index.scss';
 
-$breakpoints: (phone: 320px,
-  tablet: 768px,
-  desktop: 1024px,
-);
+#showcase {
+  margin-bottom: 3rem;
 
-.container {
-  margin-bottom: 2rem;
-
-  .showcase_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70vh;
-    margin-top: -180px;
-  }
-
-
-  .showcase_img {
-    object-fit: cover;
-  }
-
-  .image2 {
-    transform: translateY(14%);
-
-    margin-top: 2rem;
-    z-index: 100;
-  }
-
-  .image1 {
-    transform: translateY(40%);
-
-  }
-
-  .titleImg {
-    width: 10vw;
-  }
-
-  .showcase_content {
-    margin: 0 auto;
-  }
-
-  .showcase_content h2 {
-    margin: 0 auto;
-    color: $primary-color;
-    font-size: 40px;
+  .container {
+    max-width: 1440px;
     width: 100%;
-    padding: 1rem;
-    overflow: hidden;
-    transform: translateY(20%);
-  }
+    margin: 0 auto;
+    position: relative;
 
-  .green_title {
-    color: $secondary-color;
-  }
-
-  .titleImg {
-    padding-top: 1rem;
-    padding-left: 1rem;
-  }
-
-  .arrow_animation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    transform: translateY(-80%);
-    margin-top: 5rem;
-
-
-  }
-
-  .main-arrow_animation {
-    display: flex;
-    fill: $primary-color;
-    font-size: 19.5px;
-  }
-
-  .main-brief_desc {
-    display: flex;
-    width: 30%;
-    color: $primary-color;
-    font-family: $main-font;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2rem;
-  }
-
-  #curve {
-    fill: transparent;
-  }
-
-  .text {
-    transform-origin: 50% 50%;
-    animation: rotate 15s linear infinite;
-    color: $primary-color;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotateZ(0deg);
-    }
-
-    to {
-      transform: rotateZ(360deg);
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .showcase_content h2 {
-      width: 80%;
-      margin: 0 auto;
-    }
-
-    .image2 {
-      transform: translateX(5vw);
-
-    }
-
-    .image1 {
-      transform: translateX(-5vw);
-
-    }
-  }
-
-  @media (min-width: 1640px) {
-    .showcase_content h2 {
-      width: 80%;
-      margin: 0 auto;
-    }
-
-    .image2 {
-      transform: translateX(12vw);
-   
-    }
-
-    .image1 {
-      transform: translateX(-12vw);
-     
-    }
-  }
-
-  @media (max-width: 800px) {
     .showcase_wrapper {
-      position: relative;
-      max-width: 800px;
-      margin-top: -140px;
-      padding-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       overflow: hidden;
 
-      .image1 {
+      .showcase-img {
+        object-fit: cover;
         position: absolute;
-        transform: translateX(-82%);
-        bottom: 3.5rem;
+
+        @media (min-width: map-get($breakpoints, desktop)) {
+          &.image1 {
+            left: -8vw;
+            top: 270px;
+            z-index: 2;
+          }
+
+          &.image2 {
+            right: -8vw;
+            top: -10px;
+            z-index: 2;
+          }
+        }
+
+        @media (max-width: map-get($breakpoints, desktop)) {
+          &.image1 {
+            left: -60px;
+            top: 270px;
+          }
+
+          &.image2 {
+            right: -60px;
+            top: -10px;
+          }
+        }
       }
 
-      .image2 {
-        position: absolute;
-        top: 3rem;
-        right: 0;
-        transform: translateX(50%);
-        z-index: -10px;
-      }
+      .showcase_content {
+        flex-grow: 1;
+        margin-top: 100px;
+        padding: 40px;
 
-      .h2 {
-        font-size: 40px;
-        width: 60%;
-        text-align: center;
-        box-sizing: border-box;
+        .showcase_title {
+          font-weight: 700;
+          font-size: 80px;
+          line-height: 1.23;
+          letter-spacing: 0.01em;
+          text-align: center;
+          color: $primary-color;
+          padding: 20px;
+          margin-top: -80px;
 
-        margin: 0;
-      }
+          @media (max-width: map-get($breakpoints, desktop)) {
+            font-weight: 600;
+            font-size: 80px;
+            padding: 20px;
+          }
 
-      .titleImg {
-        display: none;
+          @media (max-width: map-get($breakpoints, tablet)) {
+            font-weight: 600;
+            font-size: 50px;
+          }
+
+          @media (max-width: map-get($breakpoints, phone)) {
+            font-weight: 500;
+            font-size: 40px;
+          }
+
+          .green_title {
+            color: $secondary-color;
+          }
+        }
+
+        .titleImg {
+          padding-left: 50px;
+
+          @media (max-width: map-get($breakpoints, tablet)) {
+            display: none;
+          }
+
+          @media (max-width: map-get($breakpoints, phone)) {
+            display: none;
+          }
+        }
       }
     }
 
     .arrow_animation {
-      flex-direction: column;
-      gap: 30px;
-      transform: translateY(-190px);
-    }
-
-    .main-brief_desc {
-      order: 0;
-      transform: translateY(-20%);
-      line-height: 2rem;
-      width: 90%;
-      padding-top: 5rem;
-    }
-
-    .main-arrow_animation {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      transform: translateY(-80%);
+      margin-top: 7rem;
       order: 1;
-      transform: translateY(20px);
-    }
-  }
 
-  @media (max-width: 500px) {
-    .container {
-      margin: 0 auto;
-
-      .showcase_wrapper {
-        position: relative;
-        margin-top: -100px;
-        min-width: 375px;
-        align-items: center;
-
-        .image1 {
-          position: absolute;
-          transform: translateX(-82%);
-          bottom: -6rem;
-          z-index: 10;
-        }
-
-        .image2 {
-          position: absolute;
-          top: 5rem;
-          right: 0;
-          transform: translateX(60%);
-        }
-
-        .h2 {
-          font-size: 40px;
-          width: 100%;
-          width: 375px;
-          text-align: center;
-          box-sizing: border-box;
-          margin: 0;
-        }
-
-        .titleImg {
-          display: none;
-        }
-      }
-
-      .arrow_animation {
+      @media (max-width: map-get($breakpoints, tablet)) {
         flex-direction: column;
-        gap: 30px;
-        transform: translateY(-300px);
+        order: 0;
+        transform: translateY(-20%);
       }
 
-      .main-brief_desc {
-        order: 0;
-        transform: translateY(80%);
-        line-height: 2rem;
-        width: 90%;
-        padding-top: 4rem;
+      @media (max-width: map-get($breakpoints, desktop)) {
+        margin-top: 5rem;
+      }
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 480px) {
+        margin-top: 3rem;
       }
 
       .main-arrow_animation {
-        order: 1;
+        display: flex;
+        fill: $primary-color;
+        font-size: 19.5px;
 
-        padding-top: 4rem;
+        #curve {
+          fill: transparent;
+        }
+
+        .text {
+          transform-origin: 50% 50%;
+          animation: rotate 15s linear infinite;
+          color: $primary-color;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 1.4;
+          text-align: left;
+        }
+
+        @keyframes rotate {
+          from {
+            transform: rotateZ(0deg);
+          }
+          to {
+            transform: rotateZ(360deg);
+          }
+        }
+      }
+
+      .main-brief_desc {
+        display: flex;
+        width: 400px;
+        order: 0;
+        padding-top: 100px;
+
+        @media (max-width: map-get($breakpoints, tablet)) {
+          flex-direction: column;
+          order: 1;
+        }
+
+        .main-brief_text {
+          color: $primary-color;
+          font-family: $main-font;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 2rem;
+          text-align: center;
+        }
       }
     }
-  }
 
-  .message {
-    margin-top: -18rem;
-    margin-bottom: 5rem;
-    margin-left: 70vw;
-    animation: pulse 2s infinite;
-    width: auto;
-    height: auto;
-
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
+    .message {
+      margin-top: -38rem;
+      margin-bottom: 5rem;
+      margin-left: 70vw;
+      animation: pulse 2s infinite;
+      width: auto;
+      height: auto;
     }
 
-    50% {
-      transform: scale(1.1);
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
 
-    100% {
-      transform: scale(1)
-    }
-  }
+    .message-icon {
+      display: none;
 
-  .message-icon {
-    display: none;
-
-    @include media('<=tablet') {
-      display: block;
+      @media (max-width: map-get($breakpoints, tablet)) {
+        display: block;
+      }
     }
   }
 }

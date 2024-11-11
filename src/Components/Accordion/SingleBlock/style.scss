@@ -1,0 +1,134 @@
+$breakpoints: (
+  phone: 320px,
+  tablet: 768px,
+  desktop: 1200px,
+);
+
+.accordion-block {
+  margin: 20px auto;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 20px;
+
+  &.shadow {
+    border: 1px solid #000;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .accordion-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+
+    .accordion-number {
+      display: flex;
+      color: $secondary-color;
+    }
+
+    .accordion-icon {
+      display: flex;
+      background: $secondary-color;
+      border-radius: 20px;
+      padding: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+
+      &.active {
+        background-color: $line-color;
+        color: $primary-color !important;
+      }
+    }
+  }
+
+  .accordion-text {
+    color: $primary-color;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+
+    .view-work {
+      border-radius: 18px;
+      width: 204px;
+      height: 54px;
+      background-color: $secondary-color !important;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 0.90909;
+      color: #000 !important;
+    }
+
+    .accordion-title {
+      text-align: left;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.23;
+      letter-spacing: 0.01em;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-size: 30px;
+        line-height: 123%;
+        letter-spacing: 0.01em;
+      }
+    }
+
+    .accordion-description {
+      padding-top: 10px;
+      color: $primary-color;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 1.44;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 156%;
+      }
+    }
+
+    .ant-btn-variant-solid {
+      background-color: $secondary-color;
+      font-weight: 700;
+      margin-left: 0;
+      font-size: 22px;
+      line-height: 0.90909;
+      color: #000;
+      margin-bottom: 62px;
+      text-align: left;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 17px 30px;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 125%;
+      }
+
+      &.hover {
+        background-color: $secondary-color !important;
+        color: #000;
+      }
+    }
+  }
+}
+
+.underline {
+  &::after {
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    bottom: -1rem;
+    width: 100%;
+    height: 2px;
+    background-image: url('../../../images/Homepage/line.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
