@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import type { FormItemProps } from 'antd';
+import ModalWindow from './ModalWindow/ModalWindow';
 import './style.scss';
 
 const MyFormItemContext = React.createContext<(string | number)[]>([]);
@@ -50,18 +51,17 @@ const App: React.FC = () => {
   const [errorName, setErrorName] = useState<string | null>(null);
   const [errorEmail, setErrorEmail] = useState<string | null>(null);
   const [errorCompany, setErrorCompany] = useState<string | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const validateForm = () => {
     let valid = true;
 
- 
     if (!/^[\p{L}\d\s._-]+$/u.test(formData.firstName)) {
       setErrorName('Please enter only letters and the field cannot be empty');
       valid = false;
     } else {
       setErrorName(null);
     }
-
 
     if (
       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
@@ -74,8 +74,7 @@ const App: React.FC = () => {
       setErrorEmail(null);
     }
 
- 
-    if (!/^[\p{L}\d\s._-]+$/u.test(formData.companyName)) {
+    if (!/^[\p{L}\d\s,'&()-/:]+$/u.test(formData.companyName)) {
       setErrorCompany('Enter correct company name');
       valid = false;
     } else {
@@ -88,9 +87,9 @@ const App: React.FC = () => {
   const onFinish = () => {
     if (validateForm()) {
       console.log('Form submitted:', formData);
-    
 
       form.resetFields();
+      setIsModalVisible(true);
     } else {
       console.log('Form contains errors.');
     }
@@ -106,9 +105,12 @@ const App: React.FC = () => {
       [field]: value,
     }));
   };
-
+  const handleModalClose = () => {
+    setIsModalVisible(false);
+  };
   return (
-    <div className="form">
+    
+    <div className={`form ${isModalVisible ? 'blur-background' : ''}`}>
       <div className="contact_us">
         <span className="contact_us_text">Contact</span>
         <span className="contact_us_text">us</span>
@@ -155,6 +157,11 @@ const App: React.FC = () => {
           Submit
         </Button>
       </Form>
+      <ModalWindow
+        isModalVisible={isModalVisible}
+        handleModalClose={handleModalClose}
+      />
+
     </div>
   );
 };
