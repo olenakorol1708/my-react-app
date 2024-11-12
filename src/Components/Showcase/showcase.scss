@@ -69,12 +69,13 @@
 
           @media (max-width: map-get($breakpoints, tablet)) {
             font-weight: 600;
-            font-size: 50px;
+            font-size: 40px;
           }
 
           @media (max-width: map-get($breakpoints, phone)) {
-            font-weight: 500;
             font-size: 40px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
           }
 
           .green_title {

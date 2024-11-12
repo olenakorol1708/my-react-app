@@ -23,9 +23,11 @@ const menuLinksConfigs: MenuLinkConfig[] = [
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+ 
   const navigate = useNavigate();
+
   const handleRegisterClick = () => {
-    navigate('/register');
+    navigate(paths.REGISTER);
   };
   const toggleMenu = (): void => {
     setIsOpen(prevIsOpen => !prevIsOpen);
