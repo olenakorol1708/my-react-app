@@ -1,0 +1,186 @@
+$breakpoints: (phone: 568px,
+    tablet: 768px,
+    desktop: 1200px,
+);
+
+.industry {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-height: 600px;
+    width: 100vw;
+    background-color: $secondary-color;
+    background-image: url('../../images/Homepage/spiral.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (max-width: map-get($breakpoints, tablet)) {
+        margin-top: 3rem;
+        background-position: bottom center;
+
+    }
+
+    @media (max-width: map-get($breakpoints, phone)) {
+        background-image: url('../../images/Homepage/spiralMobile.svg');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        width: 100%;
+    }
+
+
+    .industry-experience {
+        display: flex;
+        flex-direction: column;
+        padding: 100px;
+
+        @media (max-width: map-get($breakpoints, tablet)) {
+            padding: 20px;
+            padding-left: 3rem;
+
+        }
+
+        .industry-title {
+            font-weight: 700;
+            font-size: 65px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
+            color: $text-color;
+            text-align: left;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-weight: 700;
+                font-size: clamp(30px, 5vw + 1em, 40px);
+                line-height: 123%;
+                text-align: center;
+
+
+
+            }
+
+            .blackStar {
+                display: none;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    display: block;
+                    margin: 0 auto;
+                    padding: 0.1rem;
+                    text-align: center;
+
+                }
+            }
+
+            .blackStar2 {
+                padding: 1rem;
+                margin-right: -2rem;
+                margin-bottom: -2.5rem;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .industry-button {
+            font-weight: 700;
+            font-size: 22px;
+            color: $text-color;
+            background: var(--primary-color);
+            margin-top: 1rem;
+            border-radius: 18px;
+            max-width: 204px;
+            height: 54px;
+            line-height: 0.90909;
+            padding: 17px 30px;
+
+            &:hover {
+                background: var(--primary-color);
+                color: $text-color;
+
+            }
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                max-width: 204px;
+                height: 34px;
+                line-height: 0.90909;
+                padding: 13px 20px;
+                font-size: 18px;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+
+            @media (max-width: map-get($breakpoints, phone)) {
+                transform: translateY(15rem);
+            }
+
+        }
+    }
+
+    .industry-list {
+        padding-top: 100px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-bottom: 150px;
+
+        @media (max-width: map-get($breakpoints, tablet)) {
+            gap: 0.1rem;
+            margin-bottom: 130px;
+            justify-content: flex-end;
+            margin-top: 1.2rem;
+        }
+
+        @media (max-width: map-get($breakpoints, phone)) {
+            margin-top: -9rem;
+        }
+
+
+        .industry-name {
+            display: flex;
+            padding: 6px 122px 6px 0;
+            font-weight: 600;
+            font-size: 28px;
+            color: $text-color;
+            width: auto;
+            max-height: 310px;
+            list-style: none;
+            text-align: left;
+            align-items: center;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-size: 22px;
+                padding: 4px 120px 4px 0;
+            }
+
+
+            .industry-icon {
+                width: 16px;
+                height: 16px;
+                background: $primary-color;
+                margin-right: 20px;
+                border-radius: 20px;
+                padding: 5px;
+                border: none;
+                cursor: pointer;
+                transition: background 0.3s ease-in-out;
+
+                &.active {
+                    background-color: $line-color;
+                    color: $primary-color !important;
+                }
+
+                @media (max-width: map-get($breakpoints, phone)) {
+                    margin-left: 20px;
+
+                }
+            }
+        }
+    }
+}

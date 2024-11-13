@@ -3,6 +3,7 @@
 // Primary and Secondary Colors
 $primary-color: #ffffff;
 $secondary-color: #c3f00f;
+$text-color:#000;
 
 // Background Colors
 $background-color: #121c22;
@@ -14,9 +15,12 @@ $line-color: #334855;
 $round-color: #1e2e38;
 
 // Fonts
-$main-font: 'Proxima Nova', sans-serif;
-$title-font: 'PolySans', sans-serif;
-$second-title-font: 'Russo_one', sans-serif;
+$main-font: 'Proxima Nova',
+sans-serif;
+$title-font: 'PolySans',
+sans-serif;
+$second-title-font: 'Russo_one',
+sans-serif;
 
 @font-face {
   font-family: 'Proxima Nova';
@@ -24,6 +28,7 @@ $second-title-font: 'Russo_one', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../Fonts/Proxima\ Nova\ Semibold.ttf') format('truetype');
