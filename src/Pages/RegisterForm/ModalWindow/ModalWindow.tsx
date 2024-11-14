@@ -23,7 +23,7 @@ interface ModalWindowProps {
 const ModalWindow: React.FC<ModalWindowProps> = ({
   isModalVisible,
   handleModalClose,
-  isSuccessful = null,
+  isSuccessful,
 }) => {
   const navigate = useNavigate();
 
