@@ -1,9 +1,11 @@
-import './showcase.scss';
+import paths from '../../Paths/paths';
 import message from '@/images/Homepage/message.webp';
 import leftImage from '@/images/Homepage/homepageLeft.svg';
 import rightImage from '@/images/Homepage/homepageRight.svg';
 import titleImage from '@/images/Homepage/titleImg.svg';
 import arrow from '@/images/Homepage/arrow.png';
+
+import './showcase.scss';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +13,7 @@ const Showcase: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/register');
+    navigate(paths.REGISTER);
   };
   return (
     <section id="showcase">
