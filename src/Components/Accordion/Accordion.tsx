@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SingleBlock from './SingleBlock/SingleBlock';
 import data from './SingleBlock/data';
 import star from '@/images/Homepage/star.svg';
@@ -12,7 +12,7 @@ interface DataItem {
 }
 
 const Accordion: React.FC = () => {
-  const [accordionItem, setAccordionItem] = useState<DataItem[]>(data);
+  const accordionItem: DataItem[] = data;
 
   return (
     <div className="container">

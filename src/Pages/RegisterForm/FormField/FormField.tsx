@@ -1,15 +1,28 @@
 import React from 'react';
 import { Form, Input } from 'antd';
 
-const FormField: React.FC<{
+type FormFieldProps = {
   label: string;
-  name: string;
+  name: 'firstName' | 'businessEmail' | 'companyName';
   value: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>, field: string) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: 'firstName' | 'businessEmail' | 'companyName'
+  ) => void;
   placeholder: string;
   rules: any[];
   isMobile: boolean;
-}> = ({ label, name, value, handleChange, placeholder, rules, isMobile }) => (
+};
+
+const FormField: React.FC<FormFieldProps> = ({
+  label,
+  name,
+  value,
+  handleChange,
+  placeholder,
+  rules,
+  isMobile,
+}) => (
   <Form.Item
     label={label}
     name={name}
@@ -24,7 +37,7 @@ const FormField: React.FC<{
       value={value}
       onChange={e => handleChange(e, name)}
       placeholder={placeholder}
-      style={{ width: '100%', backgroundColor: '#243843', color: 'white' }}
+      className="form-input"
     />
   </Form.Item>
 );

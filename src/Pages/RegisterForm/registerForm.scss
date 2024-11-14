@@ -1,10 +1,15 @@
-.register_page {
+.register-page {
   margin-top: -40px;
-  background-image: url('.././../images/Homepage/net.svg');
+  background-image: url('../../images/Homepage/net.svg');
   background-position: center;
   background-size: cover;
   height: 55vh;
   position: relative;
+
+  &.blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+  }
 
   &::after {
     content: '';
@@ -16,19 +21,183 @@
     margin: -1rem;
     background-image: url('../../images/Homepage/line.svg');
   }
-  .contact_us {
+
+  &__contact-us {
     padding-top: 3rem;
     margin-bottom: 2rem;
 
-    .contact_us_text {
+    &-text {
       font-size: 40px;
       padding-right: 1rem;
       font-weight: bold;
       color: $primary-color;
+
+      &:last-child {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.form {
+  position: relative;
+  transition: filter 0.3s ease;
+
+
+  &.blur-background {
+    filter: blur(5px);
+  }
+
+  &-container {
+    margin: 0 auto;
+    padding: 20px;
+
+    &.form-mobile {
+      padding: 10px;
+      width: 100%;
     }
 
-    .contact_us_text:last-child {
-      color: $secondary-color;
+    &.form-desktop {
+      max-width: 600px;
+      background-color: #18262e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      color: $primary-color !important;
+
+      .ant-form-item-label {
+        color: $primary-color !important;
+
+      }
+
+      .ant-form-item-required {
+        color: $primary-color !important;
+      }
+
+      .ant-form-item-required::before {
+        content: '*';
+        color: transparent !important;
+      }
+
+      .ant-form-item-required::after {
+        content: '*';
+        margin-left: 0.3rem;
+        color: $secondary-color !important;
+      }
+
+      .ant-input {
+        background-color: #243843;
+        border: 1px solid #d1d0d0;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        transition: border-color 0.3s;
+        margin: 0.3rem;
+
+        &:focus {
+          background-color: #243843;
+          border-color: #ff6f61;
+        }
+      }
+
+      button {
+        background-color: $secondary-color;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-color !important;
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+
+      .ant-form-item {
+        margin-bottom: 16px;
+      }
+
+      .input-warning {
+        color: red;
+        font-size: 14px;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container.form-mobile {
+    margin-top: -2rem;
+    width: 100%;
+    color: $primary-color !important;
+
+    .ant-form-item-required {
+      color: $primary-color !important;
+    }
+
+
+
+    .ant-form-item-required::before {
+      content: '*';
+      color: transparent !important;
+    }
+
+    .ant-form-item-required::after {
+      content: '*';
+      margin-left: 0.3rem;
+      color: $secondary-color !important;
+
+    }
+
+    .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label>label::after {
+      visibility: visible;
+    }
+
+    .ant-input {
+      background-color: #243843;
+      border: 1px solid #d1d0d0;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      transition: border-color 0.3s;
+
+
+      &:focus {
+        background-color: #243843;
+        border-color: #ff6f61;
+      }
+    }
+
+    button {
+      background-color: $secondary-color;
+      color: #000000;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-color !important;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
     }
   }
 }

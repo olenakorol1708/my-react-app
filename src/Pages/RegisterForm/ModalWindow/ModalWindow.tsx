@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Modal } from 'antd';
 import paths from '../../../Paths/paths';
+
 import smile from '@/images/Homepage/smile.png';
 import sad from '@/images/Homepage/sad.webp';
 import './style.scss';
@@ -18,18 +19,11 @@ interface ModalWindowProps {
   handleModalClose: () => void;
   formFields?: FormField[];
   isSuccessful: boolean | null;
-  menuLinksConfigs: MenuLinkConfig[];
 }
-interface MenuLinkConfig {
-  label: string;
-  url: string;
-}
-
 const ModalWindow: React.FC<ModalWindowProps> = ({
   isModalVisible,
   handleModalClose,
   isSuccessful,
-  menuLinksConfigs,
 }) => {
   const navigate = useNavigate();
 
