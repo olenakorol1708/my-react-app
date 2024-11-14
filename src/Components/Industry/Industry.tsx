@@ -25,13 +25,13 @@ const Industry = () => {
           View case studies
         </Button>
       </div>
-      <div className="industry-list">
+      <ul className="industry-list">
         {experienceList.map(item => (
           <li key={item.id} className="industry-name">
             <CheckOutlined className="industry-icon" /> {item.title}
           </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
