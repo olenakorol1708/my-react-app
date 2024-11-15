@@ -178,7 +178,6 @@ const workData: WorkData[] = [
     imageUrl: media11,
     category: "Designs",
     categoryTitle: "UI/UX design",
-
     subTitle: "",
     sectionTitle: "",
     text: "",
@@ -189,7 +188,6 @@ const workData: WorkData[] = [
     imageUrl: media12,
     category: "Designs",
     categoryTitle: "UI/UX design",
-
     subTitle: "",
     sectionTitle: "",
     text: "",
@@ -419,7 +417,6 @@ const workData: WorkData[] = [
     imageUrl: media35,
     category: "Designs",
     categoryTitle: "Graphic design",
-
     subTitle: "",
     sectionTitle: "",
     text: "",
