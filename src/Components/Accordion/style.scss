@@ -1,5 +1,4 @@
-$breakpoints: (
-  phone: 320px,
+$breakpoints: (phone: 320px,
   tablet: 768px,
   desktop: 1200px,
 );
@@ -14,7 +13,7 @@ $breakpoints: (
   line-height: 1.23;
   letter-spacing: 0.01em;
   text-align: center;
-  color: #fff;
+  color: $primary-color;
   position: relative;
   padding-bottom: 10px;
 
@@ -37,18 +36,22 @@ $breakpoints: (
     line-height: 123%;
     letter-spacing: 0.01em;
   }
+
   .star-img1 {
     display: none;
+
     @media (max-width: map-get($breakpoints, tablet)) {
       display: block;
       margin: 0 auto;
     }
   }
+
   .star-img2 {
     @media (max-width: map-get($breakpoints, tablet)) {
       display: none;
     }
   }
+
   .color-text1 {
     color: $primary-color;
   }

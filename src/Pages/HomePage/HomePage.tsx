@@ -1,4 +1,9 @@
-import { Showcase, InfiniteSlider, Accordion } from '../../Components/index';
+import {
+  Showcase,
+  InfiniteSlider,
+  Accordion,
+  Industry,
+} from '../../Components/index';
 import './HomePage.scss';
 import net from '@/images/Homepage/net.svg';
 
@@ -12,6 +17,7 @@ const HomePage = () => {
       <Showcase />
       <InfiniteSlider />
       <Accordion />
+      <Industry />
     </div>
   );
 };
