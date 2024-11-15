@@ -1,11 +1,14 @@
-import React from 'react';
 import blackStar from '@/images/Homepage/blackStar.svg';
 import { Button } from 'antd';
-import { CheckOutlined } from '@ant-design/icons';
+import IndustryExperienceItem from './IndustryExperienceItem';
 import './style.scss';
 
+interface ExperienceItem {
+  id: number;
+  title: string;
+}
 const Industry = () => {
-  const experienceList = [
+  const experienceList: ExperienceItem[] = [
     { id: 1, title: 'Marketing' },
     { id: 2, title: 'Retail' },
     { id: 3, title: 'SaaS' },
@@ -16,10 +19,13 @@ const Industry = () => {
     <div className="industry">
       <div className="industry-experience">
         <h3 className="industry-title">
-          <img src={blackStar} className="blackStar" alt="star" />
-          We have extensive
-          <img src={blackStar} className="blackStar2" alt="star" />
-          <br /> industry experience
+          <span>
+            <img src={blackStar} className="blackStar" alt="star" />
+            We have extensive
+            <img src={blackStar} className="blackStar2" alt="star" />
+          </span>
+          <br />
+          <span>industry experience</span>
         </h3>
         <Button type="primary" className="industry-button">
           View case studies
@@ -27,9 +33,7 @@ const Industry = () => {
       </div>
       <ul className="industry-list">
         {experienceList.map(item => (
-          <li key={item.id} className="industry-name">
-            <CheckOutlined className="industry-icon" /> {item.title}
-          </li>
+          <IndustryExperienceItem key={item.id} title={item.title} />
         ))}
       </ul>
     </div>
