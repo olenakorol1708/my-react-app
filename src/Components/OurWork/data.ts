@@ -50,14 +50,14 @@ import media49 from '@/images/Homepage/work/caseStudies/1.webp';
 import media50 from '@/images/Homepage/work/caseStudies/2.webp';
 import media51 from '@/images/Homepage/work/caseStudies/3.webp';
 import media52 from '@/images/Homepage/work/caseStudies/4.webp';
-import video1 from '../../video/HomePage/3Dmodelling/1.mp4';
-import video2 from '../../video/HomePage/3Dmodelling/2.mp4';
-import video3 from '../../video/HomePage/production/1.mp4';
-import video4 from '../../video/HomePage/production/2.mp4';
-import video5 from '../../video/HomePage/production/3.mp4';
-import video6 from '../../video/HomePage/production/4.mp4';
-import video7 from '../../video/HomePage/production/5.mp4';
-import video8 from '../../video/HomePage/production/6.mp4';
+import video1 from '@/video/HomePage/production/1.mp4';
+import video2 from '@/video/HomePage/production/2.mp4';
+import video3 from '@/video/HomePage/production/1.mp4';
+import video4 from '@/video/HomePage/production/2.mp4';
+import video5 from '@/video/HomePage/production/3.mp4';
+import video6 from '@/video/HomePage/production/4.mp4';
+import video7 from '@/video/HomePage/production/5.mp4';
+import video8 from '@/video/HomePage/production/6.mp4';
 
 
 export interface WorkData {

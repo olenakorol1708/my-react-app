@@ -13,6 +13,7 @@
     "paths": {
       "@/components/*": ["src/Components/*"],
       "@/images/*": ["src/images/*"],
+      "@/video/*": ["src/video/*"],
       "@/paths/*": ["src/Paths/*"]
     }
   }
