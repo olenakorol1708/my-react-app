@@ -4,7 +4,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --primary-color: #ffffff;
+  --secondary-color: #c3f00f;
 }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -14,11 +17,22 @@
 body {
   font-family: $main-font;
   background-color: $background-color;
-  
+  min-width: 360px;
 }
+
 .container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
- 
 }
+
+$breakpoints: (phone: 320px,
+  tablet: 768px,
+  desktop: 1200px,
+);
+
+@media (max-width: map-get($breakpoints, desktop)) {}
+
+@media (max-width: map-get($breakpoints, tablet)) {}
+
+@media (max-width: map-get($breakpoints, phone)) {}

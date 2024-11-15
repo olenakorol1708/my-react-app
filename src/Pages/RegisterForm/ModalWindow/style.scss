@@ -1,8 +1,23 @@
 .ant-modal {
-    z-index: 1000;
-  }
-  
-  
-  .ant-modal-mask {
-    background: rgba(0, 0, 0, 0.5); 
-  }
+  z-index: 1000;
+}
+
+.ant-modal-mask {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-smile {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.modal-button {
+  width: 100%;
+  background-color: $secondary-color;
+  margin-top: 2rem;
+  color: #121c22;
+}

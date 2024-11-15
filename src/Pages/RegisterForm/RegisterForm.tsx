@@ -1,169 +1,110 @@
-import React, { useState } from 'react';
-import { Button, Form, Input } from 'antd';
-import type { FormItemProps } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Form } from 'antd';
+import FormField from '../RegisterForm/FormField/FormField';
+import SubmitButton from '../RegisterForm/SubmitButton/SubmitButton';
 import ModalWindow from './ModalWindow/ModalWindow';
-import './style.scss';
+import './registerForm.scss';
 
-const MyFormItemContext = React.createContext<(string | number)[]>([]);
-
-interface MyFormItemGroupProps {
-  prefix: string | number | (string | number)[];
-}
-
-function toArr(
-  str: string | number | (string | number)[]
-): (string | number)[] {
-  return Array.isArray(str) ? str : [str];
-}
-
-const MyFormItemGroup: React.FC<
-  React.PropsWithChildren<MyFormItemGroupProps>
-> = ({ prefix, children }) => {
-  const prefixPath = React.useContext(MyFormItemContext);
-  const concatPath = React.useMemo(
-    () => [...prefixPath, ...toArr(prefix)],
-    [prefixPath, prefix]
-  );
-
-  return (
-    <MyFormItemContext.Provider value={concatPath}>
-      {children}
-    </MyFormItemContext.Provider>
-  );
-};
-
-const MyFormItem = ({ name, ...props }: FormItemProps) => {
-  const prefixPath = React.useContext(MyFormItemContext);
-  const concatName =
-    name !== undefined ? [...prefixPath, ...toArr(name)] : undefined;
-
-  return <Form.Item name={concatName} {...props} />;
-};
-
-const App: React.FC = () => {
-  const [form] = Form.useForm();
-
+const RegisterForm: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [formData, setFormData] = useState({
     firstName: '',
     businessEmail: '',
     companyName: '',
   });
-  const [errorName, setErrorName] = useState<string | null>(null);
-  const [errorEmail, setErrorEmail] = useState<string | null>(null);
-  const [errorCompany, setErrorCompany] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isSuccessful, setIsSuccessful] = useState<boolean | null>(null);
 
-  const validateForm = () => {
-    let valid = true;
+  type FormFieldKey = keyof typeof formData;
 
-    if (!/^[\p{L}\d\s._-]+$/u.test(formData.firstName)) {
-      setErrorName('Please enter only letters and the field cannot be empty');
-      valid = false;
-    } else {
-      setErrorName(null);
-    }
+  const formFields: {
+    label: string;
+    name: FormFieldKey;
+    placeholder: string;
+    rules: { required: boolean; message: string }[];
+  }[] = [
+    {
+      label: 'First Name',
+      name: 'firstName',
+      placeholder: 'Olivia Smith',
+      rules: [{ required: true, message: 'Please input your name!' }],
+    },
+    {
+      label: 'Business Email',
+      name: 'businessEmail',
+      placeholder: 'business@gmail.com',
+      rules: [{ required: true, message: 'Please input your email!' }],
+    },
+    {
+      label: 'Company Name',
+      name: 'companyName',
+      placeholder: 'Business Name',
+      rules: [{ required: true, message: 'Please input your company name!' }],
+    },
+  ];
 
-    if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-        formData.businessEmail
-      )
-    ) {
-      setErrorEmail('Enter correct e-mail');
-      valid = false;
-    } else {
-      setErrorEmail(null);
-    }
-
-    if (!/^[\p{L}\d\s,'&()-/:]+$/u.test(formData.companyName)) {
-      setErrorCompany('Enter correct company name');
-      valid = false;
-    } else {
-      setErrorCompany(null);
-    }
-
-    return valid;
-  };
-
-  const onFinish = () => {
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-
-      form.resetFields();
-      setIsModalVisible(true);
-    } else {
-      console.log('Form contains errors.');
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    field: string
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: FormFieldKey
   ) => {
-    const { value } = event.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [field]: value,
-    }));
+    setFormData(prevData => ({ ...prevData, [field]: e.target.value }));
   };
+
+  const onFinish = async (values: any) => {
+    setLoading(true);
+    console.log(values);
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsSuccessful(Math.random() > 0.5);
+    setLoading(false);
+    setIsModalVisible(true);
+  };
+
   const handleModalClose = () => {
     setIsModalVisible(false);
+    setIsSuccessful(null);
   };
   return (
-    
-    <div className={`form ${isModalVisible ? 'blur-background' : ''}`}>
-      <div className="contact_us">
-        <span className="contact_us_text">Contact</span>
-        <span className="contact_us_text">us</span>
+    <div className={`register-page ${isModalVisible ? 'blur-background' : ''}`}>
+      <div className="register-page__contact-us">
+        <span className="register-page__contact-us-text">Contact</span>
+        <span className="register-page__contact-us-text">us</span>
       </div>
       <Form
-        form={form}
-        name="form_item_path"
-        layout="vertical"
+        className={`form-container ${isMobile ? 'form-mobile' : 'form-desktop'}`}
+        name="register_form"
+        layout={isMobile ? 'vertical' : 'horizontal'}
         onFinish={onFinish}
       >
-        <MyFormItemGroup prefix={['user']}>
-          <MyFormItemGroup prefix={['name']}>
-            <MyFormItem name="firstName" label="Name" required>
-              <Input
-                placeholder="Olivia Smith"
-                value={formData.firstName}
-                onChange={e => handleInputChange(e, 'firstName')}
-              />
-            </MyFormItem>
-            {errorName && <span className="input-warning">{errorName}</span>}
-            <MyFormItem name="businessEmail" label="Business email" required>
-              <Input
-                placeholder="example@business.com"
-                value={formData.businessEmail}
-                onChange={e => handleInputChange(e, 'businessEmail')}
-              />
-            </MyFormItem>
-            {errorEmail && <span className="input-warning">{errorEmail}</span>}
-          </MyFormItemGroup>
-
-          <MyFormItem name="companyName" label="Company Name" required>
-            <Input
-              placeholder="XRii"
-              value={formData.companyName}
-              onChange={e => handleInputChange(e, 'companyName')}
-            />
-          </MyFormItem>
-          {errorCompany && (
-            <span className="input-warning">{errorCompany}</span>
-          )}
-        </MyFormItemGroup>
-
-        <Button type="primary" block htmlType="submit">
-          Submit
-        </Button>
+        {formFields.map(field => (
+          <FormField
+            key={field.name}
+            label={field.label}
+            name={field.name}
+            placeholder={field.placeholder}
+            rules={field.rules}
+            value={formData[field.name]}
+            handleChange={handleInputChange}
+            isMobile={isMobile}
+          />
+        ))}
+        <SubmitButton loading={loading} />
       </Form>
       <ModalWindow
         isModalVisible={isModalVisible}
+        isSuccessful={isSuccessful}
         handleModalClose={handleModalClose}
+        formFields={formFields}
       />
-
     </div>
   );
 };
 
-export default App;
+export default RegisterForm;

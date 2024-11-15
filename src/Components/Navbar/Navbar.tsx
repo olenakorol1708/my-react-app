@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
-import paths from '@/paths/paths';
-
+import paths from '../../Paths/paths';
+import menuLinksConfigs from '../../Paths/menuLinksConfig';
 import { Link, useNavigate } from 'react-router-dom';
-
 import Logo from '@/images/XriiLogo/gradient_logo.svg';
 import Burger from '@/images/Homepage/burgerMenu.svg';
 import { Button } from 'antd';
 import './navbar.scss';
 
-type MenuLinkConfig = {
-  path: string;
-  name: string;
-};
-
-const menuLinksConfigs: MenuLinkConfig[] = [
-  { path: paths.HOME, name: 'Home' },
-  { path: paths.CASE, name: 'Case Studies' },
-  { path: paths.PRICE, name: 'Pricing' },
-  { path: paths.ABOUT, name: 'About' },
-  { path: paths.BLOG, name: 'Blog' },
-];
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const navigate = useNavigate();
+
   const handleRegisterClick = () => {
-    navigate('/register');
+    navigate(paths.REGISTER);
   };
   const toggleMenu = (): void => {
     setIsOpen(prevIsOpen => !prevIsOpen);
