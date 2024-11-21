@@ -43,7 +43,6 @@
   position: relative;
   transition: filter 0.3s ease;
 
-
   &.blur-background {
     filter: blur(5px);
   }
@@ -66,7 +65,6 @@
 
       .ant-form-item-label {
         color: $primary-color !important;
-
       }
 
       .ant-form-item-required {
@@ -145,8 +143,6 @@
       color: $primary-color !important;
     }
 
-
-
     .ant-form-item-required::before {
       content: '*';
       color: transparent !important;
@@ -156,10 +152,11 @@
       content: '*';
       margin-left: 0.3rem;
       color: $secondary-color !important;
-
     }
 
-    .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label>label::after {
+    .ant-form-item:not(.ant-form-item-horizontal)
+      .ant-form-item-label
+      > label::after {
       visibility: visible;
     }
 
@@ -170,7 +167,6 @@
       font-size: 16px;
       padding: 10px;
       transition: border-color 0.3s;
-
 
       &:focus {
         background-color: #243843;

@@ -4,6 +4,7 @@ import {
   Accordion,
   Industry,
 } from '../../Components/index';
+import { OurWork } from '../../Components/OurWork/index';
 import './HomePage.scss';
 import net from '@/images/Homepage/net.svg';
 
@@ -18,6 +19,7 @@ const HomePage = () => {
       <InfiniteSlider />
       <Accordion />
       <Industry />
+      <OurWork />
     </div>
   );
 };
