@@ -1,0 +1,119 @@
+.container {
+    .section-task {
+        background-color: $background-color;
+
+        .title-task {
+            margin-top: 90px;
+            font-weight: 700;
+            font-size: 70px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
+            color: $primary-color;
+            font-family: $title-font;
+            padding-left: 40px;
+            padding-right: 40px;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-size: 50px;
+            }
+
+            @media (max-width: map-get($breakpoints, phone)) {
+                font-size: 30px;
+            }
+
+
+
+            .title-task-word {
+                color: $secondary-color;
+                margin-right: 1rem;
+            }
+
+            .smile-group {
+                display: inline-flex;
+                gap: 5px;
+                white-space: nowrap;
+
+                @media (max-width: map-get($breakpoints, phone)) {
+                    margin-top: 2rem;
+                }
+            }
+
+            .smile {
+                width: 70px;
+                height: 70px;
+                margin-right: 1rem;
+            }
+        }
+
+        .icon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            justify-content: center;
+
+            >.icon-list {
+                display: flex;
+                flex: 1 1 calc(25% - 65px);
+                max-width: calc(25% - 65px);
+                flex-direction: column;
+                margin-top: 72px;
+                text-align: center;
+                list-style: none;
+
+                .icon-img {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 30px;
+                    background-color: #223540;
+                    margin: 0 auto;
+
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        width: 55px;
+                        height: 55px;
+                    }
+
+                    @media (max-width: map-get($breakpoints, phone)) {
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+
+                .icon-title {
+                    font-weight: 600;
+                    font-size: clamp(20px, 1vw, 25px);
+                    line-height: 156%;
+                    color: $primary-color;
+                    font-family: $main-font;
+                    margin-top: 10px;
+                    white-space: nowrap;
+
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        font-size: 20px;
+                    }
+
+                    @media (max-width: map-get($breakpoints, phone)) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: map-get($breakpoints, tablet)) {
+            .icon-grid>.icon-list {
+                flex: 1 1 calc(25% - 15px);
+                max-width: calc(25% - 15px);
+            }
+        }
+
+        @media (max-width: map-get($breakpoints, phone)) {
+            .icon-grid {
+                gap: 5px;
+            }
+
+            .icon-grid>.icon-list {
+                flex: 1 1 calc(50% - 5px);
+                max-width: calc(50% - 5px);
+            }
+        }
+    }
+}
