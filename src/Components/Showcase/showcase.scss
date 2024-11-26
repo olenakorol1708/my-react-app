@@ -9,14 +9,11 @@
     margin: 0 auto;
     position: relative;
 
-
     .showcase_wrapper {
       display: flex;
       justify-content: space-between;
       overflow: hidden;
       flex-wrap: wrap;
-
-
 
       .showcase-img {
         object-fit: cover;
@@ -24,14 +21,12 @@
 
         @media (min-width: 1440px) {
           &.image1 {
-
             left: -10rem;
             top: 14rem;
             z-index: 2;
           }
 
           &.image2 {
-
             right: -9rem;
             top: -1rem;
             z-index: 2;
@@ -40,14 +35,12 @@
 
         @media (min-width: 1024px) and (max-width: 1440px) {
           &.image1 {
-
             left: -1rem;
             top: 14rem;
             z-index: 2;
           }
 
           &.image2 {
-
             right: -3rem;
             top: -1rem;
             z-index: 2;
@@ -56,13 +49,11 @@
 
         @media (max-width: map-get($breakpoints, desktop)) {
           &.image1 {
-
             left: -3rem;
             top: 10rem;
           }
 
           &.image2 {
-
             right: 0;
             top: -3rem;
           }
@@ -70,13 +61,11 @@
 
         @media (max-width: map-get($breakpoints, tablet)) {
           &.image1 {
-
             left: -4rem;
             top: 10rem;
           }
 
           &.image2 {
-
             right: -3rem;
             top: -1rem;
           }
@@ -85,7 +74,6 @@
     }
 
     .showcase_content {
-
       margin-top: 100px;
       padding: 40px;
       display: flex;
@@ -93,8 +81,6 @@
       align-items: center;
       text-align: center;
       width: 100%;
-
-
 
       .showcase_title {
         font-weight: 700;
@@ -116,7 +102,6 @@
         @media (max-width: map-get($breakpoints, tablet)) {
           font-weight: 600;
           font-size: 40px;
-
         }
 
         @media (max-width: map-get($breakpoints, phone)) {

@@ -3,7 +3,7 @@
 // Primary and Secondary Colors
 $primary-color: #ffffff;
 $secondary-color: #c3f00f;
-$text-color:#000;
+$text-color: #000;
 
 // Background Colors
 $background-color: #121c22;
@@ -15,12 +15,9 @@ $line-color: #334855;
 $round-color: #1e2e38;
 
 // Fonts
-$main-font: 'Proxima Nova',
-sans-serif;
-$title-font: 'PolySans',
-sans-serif;
-$second-title-font: 'Russo_one',
-sans-serif;
+$main-font: 'Proxima Nova', sans-serif;
+$title-font: 'PolySans', sans-serif;
+$second-title-font: 'Russo_one', sans-serif;
 
 @font-face {
   font-family: 'Proxima Nova';
@@ -55,3 +52,9 @@ sans-serif;
 @function px-to-rem($px, $base-font-size: 16px) {
   @return math.div($px, $base-font-size) * 1rem;
 }
+
+$breakpoints: (
+  phone: 568px,
+  tablet: 768px,
+  desktop: 1200px,
+);

@@ -1,0 +1,39 @@
+.section-tabs .section-button {
+  margin-bottom: 50px;
+  width: 236px;
+  height: 71px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 156%;
+  border-radius: 20px;
+  background-color: transparent !important;
+  border: 1px solid $primary-color !important;
+  color: $primary-color !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover,
+  &.active {
+    color: $text-color !important;
+    border: none !important;
+    background-color: $secondary-color !important;
+  }
+
+  @media (max-width: map-get($breakpoints, tablet)) {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 153%;
+    margin-bottom: 20px;
+    width: 133px;
+    height: 39px;
+    transform: translateY(-30%);
+  }
+}
+
+.section-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
