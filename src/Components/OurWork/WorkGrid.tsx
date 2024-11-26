@@ -1,7 +1,9 @@
 import React from 'react';
 import { WorkData } from './data';
 import { RightOutlined } from '@ant-design/icons';
+
 import { Button } from 'antd';
+import './style.scss';
 
 const WorkGrid: React.FC<{ visibleData: WorkData[]; activeTab: string }> = ({
   visibleData,

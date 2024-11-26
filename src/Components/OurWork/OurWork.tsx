@@ -11,8 +11,10 @@ const OurWork: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'Designs' | 'Case studies'>(
     'Designs'
   );
+
   const [activeDivisionButton, setActiveDivisionButton] =
     useState<string>('All');
+
   const [visibleItemsCount, setVisibleItemsCount] = useState<
     Record<string, number>
   >({
@@ -64,9 +66,9 @@ const OurWork: React.FC = () => {
           setActiveDivisionButton={setActiveDivisionButton}
         />
       )}
-
-      <WorkGrid visibleData={visibleData} activeTab = {activeTab} />
-
+      <div>
+        <WorkGrid visibleData={visibleData} activeTab={activeTab} />
+      </div>
       {filteredData.length >= 4 && (
         <ShowMore
           visibleItemsCount={visibleItemsCount[currentKey] || 4}

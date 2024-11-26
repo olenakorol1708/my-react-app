@@ -1,7 +1,8 @@
 import React from 'react';
 import imageArr from './imageList';
 import iconList from './iconList';
-
+import christmasToyDesktop from '@/images/Homepage/tasksCovered/christmasToyDesktop.svg';
+import blackWhiteToy from '@/images/Homepage/tasksCovered/blackWhiteToy.svg';
 import './style.scss';
 
 const TasksCovered: React.FC = () => {
@@ -21,8 +22,14 @@ const TasksCovered: React.FC = () => {
                 className="smile"
               />
             ))}
-          </span>
+          </span>{' '}
         </h2>
+        <img
+          className="christmasToy-desktop"
+          src={christmasToyDesktop}
+          alt="toy"
+        />
+        <img className="black-white-toy" src={blackWhiteToy} alt="toy" />
         <ul className="icon-grid">
           {iconList.map(item => (
             <li key={item.id} className="icon-list">
