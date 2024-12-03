@@ -5,14 +5,29 @@
     background-color: $dotted-background-color;
     background-image: url('../../images/Homepage/dottedGrid.svg');
 
+    @media (max-width: map-get($breakpoints, tablet)) {
+        min-height: 800px;
+    }
+
     .review-slider {
         max-height: 680px;
         padding-top: 90px;
+        padding-right: 20px;
+        padding-left: 20px;
         display: flex;
         justify-content: center;
         padding-bottom: 150px;
 
+        @media (max-width: map-get($breakpoints, tablet)) {
+            max-height: 800px;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 50px;
+            padding-bottom: 70px;
 
+        }
 
 
         .review-title-block {
@@ -20,27 +35,38 @@
             align-items: flex-start;
             justify-content: center;
             flex-direction: column;
-            margin-right: 108px;
+            margin-right: 28px;
 
 
             img {
                 width: 100px;
                 height: 63px;
 
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    margin: 0 auto;
+                }
             }
 
             .clients-say {
                 font-weight: 700;
-                font-size: 60px;
+                font-size: clamp(55px, 1vw, 60px);
                 line-height: 123%;
                 letter-spacing: 0.01em;
-                text-align: center;
+                text-align: left;
                 color: $primary-color;
                 margin-top: 30px;
                 margin-bottom: 30px;
+                padding-left: 0;
 
                 .clients-green {
                     color: $secondary-color;
+                }
+            }
+
+            .review-button {
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    display: none;
                 }
             }
 
@@ -50,12 +76,15 @@
                 width: 63px;
                 height: 63px;
                 margin-right: 1rem;
+                color: $text-color;
+
+
             }
         }
 
         .clients-card {
             border-radius: 38px;
-            width: 550px;
+            max-width: 500px;
             min-height: 700px;
             display: flex;
             flex-direction: column;
@@ -65,6 +94,13 @@
 
             text-align: left;
             padding-top: 20px;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                border-radius: 26px;
+                min-width: 335px;
+                min-height: 468px;
+            }
+
 
             .clients-rate {
                 font-weight: 600;
@@ -97,23 +133,31 @@
                 width: 100%;
                 height: 2px;
                 background-color: #6b6565;
-                margin: 20px 0;
+                margin: 30px 0;
                 box-sizing: border-box;
             }
 
             .review-text {
-
+                flex: 1 1;
                 font-weight: 600;
                 font-size: clamp(24px, 1vw, 28px);
                 line-height: 1.5;
                 color: $primary-color;
+                padding: 10px;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 131%;
+                }
+
             }
 
             .profile {
                 display: flex;
                 align-items: center;
                 text-align: left;
-                margin-top: 5rem;
+                padding-bottom: 2rem;
 
 
 
@@ -148,6 +192,31 @@
                         font-size: 18px;
                         line-height: 1;
                         color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            display: none;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 40px;
+
+                .pagination-dot {
+
+
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $secondary-color;
                     }
                 }
             }
