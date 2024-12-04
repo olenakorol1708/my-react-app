@@ -1,12 +1,11 @@
 .works-block {
     width: 100%;
-    min-height: 1120px;
-    padding-bottom: 30px;
-
+    max-height: 1120px;
+    padding-bottom: 3rem;
 
     .container {
         width: 100%;
-        padding-bottom: 30px;
+        margin: 0 auto;
 
 
         .works-title {
@@ -20,6 +19,12 @@
             letter-spacing: 0.01em;
             color: $primary-color;
             padding-top: 100px;
+            font-family: $title-font;
+
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-size: 30px;
+            }
 
             .Works-green {
                 color: $secondary-color;
@@ -38,12 +43,12 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 40px;
+            gap: 30px;
 
             @media (max-width: map-get($breakpoints, tablet)) {
                 flex-direction: column;
-                gap: 20px;
-                height: 100%;
+                gap: 1px;
+
             }
 
         }
@@ -71,6 +76,10 @@
                 letter-spacing: 0.01em;
                 padding: 10px;
                 color: $secondary-color;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    font-size: 20px;
+                }
             }
 
             .works-subtitle {
@@ -82,6 +91,10 @@
                 color: $primary-color;
                 padding-left: 0px;
                 padding-bottom: 10px;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    font-size: 30px;
+                }
             }
 
 
@@ -90,6 +103,10 @@
                 font-size: 25px;
                 line-height: 144%;
                 color: $primary-color;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    font-size: 18px;
+                }
             }
         }
     }
