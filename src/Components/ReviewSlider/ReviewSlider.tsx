@@ -21,7 +21,9 @@ const ReviewSlider: React.FC = () => {
   const prevPerson = () => {
     setIndex(prevIndex => (prevIndex - 1 + reviews.length) % reviews.length);
   };
-
+  const goToSlide = (slideIndex: number) => {
+    setIndex(slideIndex);
+  };
   return (
     <section className="review">
       <div className="review-slider">
@@ -30,7 +32,7 @@ const ReviewSlider: React.FC = () => {
           <h3 className="clients-say">
             What our <span className="clients-green">clients say</span>
           </h3>
-          <div>
+          <div className="review-button">
             <Button onClick={prevPerson}>
               <LeftOutlined />
             </Button>
@@ -62,6 +64,15 @@ const ReviewSlider: React.FC = () => {
               <span className="review-title">{review.personTitle}</span>
             </div>
           </div>
+        </div>
+        <div className="pagination">
+          {reviews.map((_, i) => (
+            <span
+              key={i}
+              className={`pagination-dot ${i === index ? 'active' : ''}`}
+              onClick={() => goToSlide(i)}
+            ></span>
+          ))}
         </div>
       </div>
     </section>
