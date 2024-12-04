@@ -3,6 +3,7 @@ import {
   InfiniteSlider,
   Accordion,
   Industry,
+  HowItWorks,
 } from '../../Components/index';
 import { OurWork } from '../../Components/OurWork/index';
 import { TasksCovered } from '../../Components/TasksCovered/index';
@@ -24,6 +25,7 @@ const HomePage = () => {
       <OurWork />
       <TasksCovered />
       <ReviewSlider />
+      <HowItWorks />
     </div>
   );
 };

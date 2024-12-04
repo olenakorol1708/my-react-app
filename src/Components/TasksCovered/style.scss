@@ -80,7 +80,7 @@
 
         .black-white-toy {
             position: absolute;
-            left: calc(-6vw - 50px);
+            left: calc(-8vw - 50px);
             bottom: -430px;
             transform: translateY(-60%);
             z-index: 10;
@@ -102,7 +102,7 @@
 
             @media (min-width: 1660px) {
                 width: 20vw;
-                left: calc(-24vw - 50px);
+                left: calc(-20vw - 50px);
             }
 
         }

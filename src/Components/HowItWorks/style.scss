@@ -1,0 +1,96 @@
+.works-block {
+    width: 100%;
+    min-height: 1120px;
+    padding-bottom: 30px;
+
+
+    .container {
+        width: 100%;
+        padding-bottom: 30px;
+
+
+        .works-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-weight: 700;
+            font-size: 70px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
+            color: $primary-color;
+            padding-top: 100px;
+
+            .Works-green {
+                color: $secondary-color;
+            }
+
+            .unique-star {
+                width: 84px;
+                height: 84px;
+                text-align: center;
+                margin-left: 10px;
+            }
+        }
+
+        .works-steps {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                flex-direction: column;
+                gap: 20px;
+                height: 100%;
+            }
+
+        }
+
+        .works-info {
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: flex-start;
+            text-align: left;
+            padding-right: 60px;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                width: 100%;
+                height: auto;
+                padding: 40px;
+            }
+
+            .works-number {
+                font-weight: 300;
+                font-size: 35px;
+                line-height: 123%;
+                letter-spacing: 0.01em;
+                padding: 10px;
+                color: $secondary-color;
+            }
+
+            .works-subtitle {
+                font-weight: 700;
+                font-size: 50px;
+                line-height: 123%;
+                letter-spacing: 0.01em;
+                text-align: left;
+                color: $primary-color;
+                padding-left: 0px;
+                padding-bottom: 10px;
+            }
+
+
+            .works-description {
+                font-weight: 400;
+                font-size: 25px;
+                line-height: 144%;
+                color: $primary-color;
+            }
+        }
+    }
+}
