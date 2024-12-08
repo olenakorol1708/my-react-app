@@ -1,4 +1,4 @@
-import paths from '../../Paths/paths';
+import { paths } from '@/Paths';
 import message from '@/images/Homepage/message.webp';
 import leftImage from '@/images/Homepage/homepageLeft.svg';
 import rightImage from '@/images/Homepage/homepageRight.svg';

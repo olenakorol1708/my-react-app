@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'antd';
-import FormField from '../RegisterForm/FormField/FormField';
-import SubmitButton from '../RegisterForm/SubmitButton/SubmitButton';
-import ModalWindow from './ModalWindow/ModalWindow';
+import { FormField } from '../RegisterForm/FormField';
+import { SubmitButton } from './SubmitButton';
+import { ModalWindow } from './ModalWindow';
 import './registerForm.scss';
 
 const RegisterForm: React.FC = () => {

@@ -12,9 +12,8 @@ const TasksCovered: React.FC = () => {
         <h2 className="title-task">
           We've got all
           <br /> your
-         
-            <span className="title-task-word"> covered</span>
-            <span className="smile-group">
+          <span className="title-task-word"> covered</span>
+          <span className="smile-group">
             <img src={smile1} className="smile" alt="smile" />
             <img src={smile2} className="smile" alt="smile" />
             <img src={smile3} className="smile" alt="smile" />
