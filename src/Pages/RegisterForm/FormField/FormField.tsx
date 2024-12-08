@@ -1,5 +1,5 @@
-import React from 'react';
 import { Form, Input } from 'antd';
+import React from 'react';
 
 type FormFieldProps = {
   label: string;

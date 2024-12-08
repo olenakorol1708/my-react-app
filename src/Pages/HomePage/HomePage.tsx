@@ -1,11 +1,11 @@
 import {
-  Showcase,
-  InfiniteSlider,
   Accordion,
   Industry,
-} from '../../Components/index';
-import { OurWork } from '../../Components/OurWork/index';
-import { TasksCovered } from '../../Components/TasksCovered/index';
+  InfiniteSlider,
+  OurWork,
+  Showcase,
+  TasksCovered,
+} from '@/Components';
 import './HomePage.scss';
 import net from '@/images/Homepage/net.svg';
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import paths from '../../Paths/paths';
-import menuLinksConfigs from '../../Paths/menuLinksConfig';
+import { menuLinksConfig, paths } from '@/Paths';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '@/images/XriiLogo/gradient_logo.svg';
 import Burger from '@/images/Homepage/burgerMenu.svg';
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           <ul className={isOpen ? 'nav-link active' : 'nav-link'}>
-            {menuLinksConfigs.map(link => (
+            {menuLinksConfig.map(link => (
               <li key={link.path}>
                 <Link to={link.path}>{link.name}</Link>
               </li>

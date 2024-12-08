@@ -1,12 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import HomePage from '../Pages/HomePage/HomePage';
-import CasePage from '../Pages/CasePage/CasePage';
-import PricePage from '../Pages/PricePage/PricePage';
-import AboutPage from '../Pages/AboutPage/AboutPage';
-import BlogPage from '../Pages/BlogPage/BlogPage';
-import RegisterForm from '../Pages/RegisterForm/RegisterForm.tsx';
-import paths from '../Paths/paths';
+import {
+  AboutPage,
+  BlogPage,
+  CasePage,
+  HomePage,
+  PricePage,
+  RegisterForm,
+} from '@/Pages';
+import { paths } from '@/Paths';
 
 export const router = createBrowserRouter([
   {

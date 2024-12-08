@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Modal } from 'antd';
-import paths from '../../../Paths/paths';
+import { paths } from '@/Paths';
 
 import smile from '@/images/Homepage/smile.png';
 import sad from '@/images/Homepage/sad.webp';
