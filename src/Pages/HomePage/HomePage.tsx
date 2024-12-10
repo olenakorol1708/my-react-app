@@ -5,7 +5,10 @@ import {
   OurWork,
   Showcase,
   TasksCovered,
+  HowItWorks,
+  ReviewSlider,
 } from '@/Components';
+
 import './HomePage.scss';
 import net from '@/images/Homepage/net.svg';
 
@@ -22,6 +25,8 @@ const HomePage = () => {
       <Industry />
       <OurWork />
       <TasksCovered />
+      <ReviewSlider />
+      <HowItWorks />
     </div>
   );
 };

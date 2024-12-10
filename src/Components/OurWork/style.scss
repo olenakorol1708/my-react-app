@@ -51,94 +51,204 @@
       gap: 15px;
     }
 
-    .work-item {
-      flex: 1 1 calc(50% - 15px);
-      max-width: calc(50% - 15px);
-      min-width: 280px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      box-sizing: border-box;
+    // .work-item {
+    //   flex: 1 1 calc(50% - 15px);
+    //   max-width: calc(50% - 15px);
+    //   min-width: 280px;
+    //   border-radius: 20px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   box-sizing: border-box;
+
+    //   @media (max-width: map-get($breakpoints, tablet)) {
+    //     flex: 1 1 calc(50% - 15px);
+    //   }
+
+    //   @media (max-width: map-get($breakpoints, phone)) {
+    //     flex: 1 1 100%;
+    //   }
+
+    //   img,
+    //   video {
+    //     width: 100%;
+    //     height: auto;
+    //     border-radius: 10px;
+    //     object-fit: cover;
+    //   }
+
+    //   .sub-title {
+    //     font-weight: 300;
+    //     font-size: 25px;
+    //     line-height: 123%;
+    //     letter-spacing: 0.01em;
+    //     color: $secondary-color;
+    //     margin-top: 2rem;
+    //     color: $primary-color;
+    //     margin-bottom: 50px;
+
+    //     @media (max-width: map-get($breakpoints, phone)) {
+    //         font-size: 30px;
+    //     }
+    // }
+    // .work-grid {
+    //     margin-top: 50px;
+    //     width: 100%;
+    //     max-width: 1311px;
+    //     display: flex;
+    //     flex-direction: row;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+    //     align-items: center;
+    //     min-height: 400px;
+
+    //     @media (max-width: map-get($breakpoints, tablet)) {
+    //       font-size: 16px;
+    //     }
+    //   }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 123%;
+      letter-spacing: 0.01em;
+      text-align: left;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
 
       @media (max-width: map-get($breakpoints, tablet)) {
-        flex: 1 1 calc(50% - 15px);
+        font-size: 24px;
+      }
+    }
+
+    .section-text {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      color: $primary-color;
+      text-align: left;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+
+    .view-case-button {
+      max-width: 189px;
+      max-height: 24px;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 91%;
+      color: $secondary-color;
+      text-align: left;
+      padding: 0;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-size: 16px;
+        line-height: 125%;
       }
 
-      @media (max-width: map-get($breakpoints, phone)) {
-        flex: 1 1 100%;
-      }
-
-      img,
-      video {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        object-fit: cover;
-      }
-
-      .sub-title {
-        font-weight: 300;
-        font-size: 25px;
-        line-height: 123%;
-        letter-spacing: 0.01em;
+      .icon-arrow-right {
         color: $secondary-color;
-        margin-top: 2rem;
+        align-items: center;
+        margin: 0 auto;
 
-        @media (max-width: map-get($breakpoints, tablet)) {
-          font-size: 16px;
-        }
-      }
+        .work-item {
+          flex: 0 0 calc(50% - 25px);
+          max-width: calc(50% - 25px);
+          margin: 10px;
+          max-width: 48%;
+          min-width: 280px;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          box-sizing: border-box;
 
-      .section-title {
-        font-weight: 700;
-        font-size: 45px;
-        line-height: 123%;
-        letter-spacing: 0.01em;
-        text-align: left;
-        color: $primary-color;
-        margin-bottom: 0.5rem;
+          @media (max-width: map-get($breakpoints, tablet)) {
+            flex: 1 1 calc(100% - 15px);
+          }
 
-        @media (max-width: map-get($breakpoints, tablet)) {
-          font-size: 24px;
-        }
-      }
+          @media (max-width: map-get($breakpoints, phone)) {
+            flex: 1 1 100%;
+          }
 
-      .section-text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 140%;
-        color: $primary-color;
-        text-align: left;
-        margin-bottom: 0.5rem;
+          img,
+          video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+          }
 
-        @media (max-width: map-get($breakpoints, tablet)) {
-          font-size: 14px;
-          line-height: 150%;
-        }
-      }
+          .sub-title {
+            font-weight: 300;
+            font-size: 25px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
+            color: $secondary-color;
+            margin-top: 2rem;
 
-      .view-case-button {
-        max-width: 189px;
-        max-height: 24px;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 91%;
-        color: $secondary-color;
-        text-align: left;
-        padding: 0;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+            @media (max-width: map-get($breakpoints, tablet)) {
+              font-size: 16px;
+            }
+          }
 
-        @media (max-width: map-get($breakpoints, tablet)) {
-          font-size: 16px;
-          line-height: 125%;
-        }
+          .section-title {
+            font-weight: 700;
+            font-size: 45px;
+            line-height: 123%;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: $primary-color;
+            margin-bottom: 0.5rem;
 
-        .icon-arrow-right {
-          color: $secondary-color;
-          align-items: center;
-          margin: 0 auto;
+            @media (max-width: map-get($breakpoints, tablet)) {
+              font-size: 24px;
+            }
+          }
+
+          .section-text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 140%;
+            color: $primary-color;
+            text-align: left;
+            margin-bottom: 0.5rem;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+              font-size: 14px;
+              line-height: 150%;
+            }
+          }
+
+          .view-case-button {
+            max-width: 189px;
+            max-height: 24px;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 91%;
+            color: $secondary-color;
+            text-align: left;
+            padding: 0;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+              font-size: 16px;
+              line-height: 125%;
+            }
+
+            .icon-arrow-right {
+              color: $secondary-color;
+              align-items: center;
+              margin: 0 auto;
+            }
+          }
         }
       }
     }

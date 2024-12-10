@@ -1,8 +1,8 @@
 import React from 'react';
+import imageArr from './imageList';
 import iconList from './iconList';
-import smile1 from '@/images/Homepage/tasksCovered/smile1.svg';
-import smile2 from '@/images/Homepage/tasksCovered/smileDown2.svg';
-import smile3 from '@/images/Homepage/tasksCovered/smile 3.svg';
+import christmasToyDesktop from '@/images/Homepage/tasksCovered/christmasToyDesktop.svg';
+import blackWhiteToy from '@/images/Homepage/tasksCovered/blackWhiteToy.svg';
 import './style.scss';
 
 const TasksCovered: React.FC = () => {
@@ -14,11 +14,22 @@ const TasksCovered: React.FC = () => {
           <br /> your
           <span className="title-task-word"> covered</span>
           <span className="smile-group">
-            <img src={smile1} className="smile" alt="smile" />
-            <img src={smile2} className="smile" alt="smile" />
-            <img src={smile3} className="smile" alt="smile" />
-          </span>
+            {imageArr.map(item => (
+              <img
+                key={item.id}
+                src={item.imageUrl}
+                alt={item.imageTitle}
+                className="smile"
+              />
+            ))}
+          </span>{' '}
         </h2>
+        <img
+          className="christmasToy-desktop"
+          src={christmasToyDesktop}
+          alt="toy"
+        />
+        <img className="black-white-toy" src={blackWhiteToy} alt="toy" />
         <ul className="icon-grid">
           {iconList.map(item => (
             <li key={item.id} className="icon-list">
