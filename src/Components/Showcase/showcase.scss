@@ -12,65 +12,94 @@
     .showcase_wrapper {
       display: flex;
       justify-content: space-between;
-      overflow: hidden;
       flex-wrap: wrap;
 
       .showcase-img {
         object-fit: cover;
         position: absolute;
+        z-index: 2;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 2000px) {
           &.image1 {
-            left: -10rem;
+            left: calc(-20vw - 50px);
             top: 14rem;
-            z-index: 2;
           }
 
           &.image2 {
-            right: -9rem;
-            top: -1rem;
-            z-index: 2;
+            width: 20vw;
+            right: calc(-27vw - 50px);
+            top: 0;
           }
         }
+
+        @media (min-width: 1600px) and (max-width: 2000px) {
+          &.image1 {
+            left: calc(-14vw - 30px);
+            top: 14rem;
+          }
+
+          &.image2 {
+            right: calc(-10vw - 30px);
+            top: 0;
+          }
+        }
+
+        @media (min-width: 1441px) and (max-width: 1599px) {
+          &.image1 {
+            left: calc(-2vw - 30px);
+            top: 14rem;
+          }
+
+          &.image2 {
+            right: calc(-2vw - 30px);
+            top: 0;
+          }
+        }
+
 
         @media (min-width: 1024px) and (max-width: 1440px) {
           &.image1 {
-            left: -1rem;
+            left: calc(-1vw - 20px);
             top: 14rem;
-            z-index: 2;
           }
 
           &.image2 {
-            right: -3rem;
+            right: calc(1vw - 20px);
             top: -1rem;
-            z-index: 2;
           }
         }
 
-        @media (max-width: map-get($breakpoints, desktop)) {
+        @media (min-width: 765px) and (max-width: 1023px) {
+
+
           &.image1 {
-            left: -3rem;
+            left: calc(-2vw - 20px);
             top: 10rem;
           }
 
           &.image2 {
-            right: 0;
-            top: -3rem;
+            right: calc(-2vw - 20px);
+            top: -1rem;
           }
+
         }
 
+
         @media (max-width: map-get($breakpoints, tablet)) {
+          width: 25vw;
+
           &.image1 {
             left: -4rem;
             top: 10rem;
           }
 
           &.image2 {
-            right: -3rem;
+            right: calc(-1vw - 20px);
             top: -1rem;
           }
         }
       }
+
     }
 
     .showcase_content {
@@ -90,7 +119,7 @@
         text-align: center;
         color: $primary-color;
         padding: 20px;
-        margin-top: -80px;
+        margin-top: -60px;
 
         @media (max-width: map-get($breakpoints, desktop)) {
           font-weight: 700;
@@ -135,7 +164,8 @@
     justify-content: space-evenly;
     align-items: center;
     transform: translateY(-80%);
-    margin-top: 7rem;
+    margin-top: 9rem;
+
     order: 1;
 
     @media (max-width: map-get($breakpoints, tablet)) {

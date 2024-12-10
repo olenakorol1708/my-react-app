@@ -6,3 +6,4 @@ export * from './Industry';
 export * from './OurWork';
 export *from './ReviewSlider';
 export *from './TasksCovered'; 
+export *from './HowItWorks';

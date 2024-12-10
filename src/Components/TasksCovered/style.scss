@@ -27,7 +27,6 @@
             }
 
 
-
             .title-task-word {
                 color: $secondary-color;
                 margin-right: 1rem;
@@ -80,7 +79,7 @@
 
         .black-white-toy {
             position: absolute;
-            left: calc(-6vw - 50px);
+            left: calc(-8vw - 50px);
             bottom: -430px;
             transform: translateY(-60%);
             z-index: 10;
@@ -102,7 +101,7 @@
 
             @media (min-width: 1660px) {
                 width: 20vw;
-                left: calc(-24vw - 50px);
+                left: calc(-20vw - 50px);
             }
 
         }
@@ -114,8 +113,9 @@
             justify-content: center;
 
 
-            >.icon-list {
+            .icon-list {
                 display: flex;
+                flex-wrap: wrap;
                 flex: 1 1 calc(25% - 65px);
                 max-width: calc(25% - 65px);
                 flex-direction: column;
@@ -123,59 +123,48 @@
                 text-align: center;
                 list-style: none;
 
-                .icon-img {
-                    width: 64px;
-                    height: 64px;
-                    border-radius: 30px;
-                    background-color: #223540;
-                    margin: 0 auto;
 
-                    @media (max-width: map-get($breakpoints, tablet)) {
-                        width: 55px;
-                        height: 55px;
-                    }
-
-                    @media (max-width: map-get($breakpoints, phone)) {
-                        width: 45px;
-                        height: 45px;
-                    }
+                @media (max-width: 1024px) {
+                    flex: 1 1 calc(50% - 30px);
+                    max-width: calc(50% - 30px);
                 }
 
-                .icon-title {
-                    font-weight: 600;
-                    font-size: clamp(20px, 1vw, 25px);
-                    line-height: 156%;
-                    color: $primary-color;
-                    font-family: $main-font;
-                    margin-top: 10px;
-                    white-space: nowrap;
-
-                    @media (max-width: map-get($breakpoints, tablet)) {
-                        font-size: 20px;
-                    }
-
-                    @media (max-width: map-get($breakpoints, phone)) {
-                        font-size: 16px;
-                    }
-                }
             }
         }
 
-        @media (max-width: map-get($breakpoints, tablet)) {
-            .icon-grid>.icon-list {
-                flex: 1 1 calc(25% - 15px);
-                max-width: calc(25% - 15px);
+        .icon-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 30px;
+            background-color: #223540;
+            margin: 0 auto;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                width: 55px;
+                height: 55px;
+            }
+
+            @media (max-width: map-get($breakpoints, phone)) {
+                width: 45px;
+                height: 45px;
             }
         }
 
-        @media (max-width: map-get($breakpoints, phone)) {
-            .icon-grid {
-                gap: 5px;
+        .icon-title {
+            font-weight: 600;
+            font-size: clamp(20px, 1vw, 25px);
+            line-height: 156%;
+            color: $primary-color;
+            font-family: $main-font;
+            margin-top: 10px;
+            white-space: nowrap;
+
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-size: 20px;
             }
 
-            .icon-grid>.icon-list {
-                flex: 1 1 calc(50% - 5px);
-                max-width: calc(50% - 5px);
+            @media (max-width: map-get($breakpoints, phone)) {
+                font-size: 16px;
             }
         }
     }
