@@ -14,11 +14,11 @@ const ReviewSlider: React.FC = () => {
 
   const review = reviews[index];
 
-  const nextPerson = () => {
+  const handleNextClick = () => {
     setIndex(prevIndex => (prevIndex + 1) % reviews.length);
   };
 
-  const prevPerson = () => {
+  const handlePrevClick = () => {
     setIndex(prevIndex => (prevIndex - 1 + reviews.length) % reviews.length);
   };
   const goToSlide = (slideIndex: number) => {
@@ -33,10 +33,10 @@ const ReviewSlider: React.FC = () => {
             What our <span className="clients-green">clients say</span>
           </h3>
           <div className="review-button">
-            <Button onClick={prevPerson}>
+            <Button onClick={handlePrevClick}>
               <LeftOutlined />
             </Button>
-            <Button onClick={nextPerson}>
+            <Button onClick={handleNextClick}>
               <RightOutlined />
             </Button>
           </div>

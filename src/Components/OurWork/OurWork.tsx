@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import workData from './data';
-import { WorkData } from './data';
+import workData, { WorkData } from './data';
 import { Tabs } from './Tabs';
 import WorkGrid from './WorkGrid';
 import { Category } from './Category';
