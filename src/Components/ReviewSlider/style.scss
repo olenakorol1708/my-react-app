@@ -1,7 +1,7 @@
 .review {
     width: 100%;
     box-sizing: border-box;
-    height: 924px;
+    min-height: 924px;
     background-color: $dotted-background-color;
     background-image: url('../../images/Homepage/dottedGrid.svg');
 
@@ -10,38 +10,39 @@
     }
 
     .review-slider {
-        max-height: 680px;
-        padding-top: 90px;
-        padding-right: 20px;
-        padding-left: 20px;
+        min-height: 780px;
+        padding: 90px 20px 150px;
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        padding-bottom: 150px;
+        flex: 1 1;
 
         @media (max-width: map-get($breakpoints, tablet)) {
-            max-height: 800px;
+            min-height: 600px;
             flex-direction: column;
             align-items: center;
-            padding-right: 10px;
-            padding-left: 10px;
-            padding-top: 50px;
-            padding-bottom: 70px;
-
+            padding: 50px 10px 70px;
         }
-
 
         .review-title-block {
             display: flex;
+            flex: 1 1 0;
+            width: 100%;
+            flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            flex-direction: column;
-            margin-right: 28px;
+            margin-left: 12rem;
+            padding-left: 1rem;
 
+            @media (max-width: map-get($breakpoints, tablet)) {
+                margin: 0 auto;
+                align-items: center;
+                padding-left: 0;
+            }
 
             img {
                 width: 100px;
                 height: 63px;
-
 
                 @media (max-width: map-get($breakpoints, tablet)) {
                     margin: 0 auto;
@@ -50,14 +51,17 @@
 
             .clients-say {
                 font-weight: 700;
-                font-size: clamp(55px, 1vw, 60px);
+                font-size: clamp(70px, 1vw, 80px);
                 line-height: 123%;
                 letter-spacing: 0.01em;
                 text-align: left;
                 color: $primary-color;
-                margin-top: 30px;
-                margin-bottom: 30px;
-                padding-left: 0;
+                margin: 30px 0;
+
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    text-align: center;
+                    font-size: 55px;
+                }
 
                 .clients-green {
                     color: $secondary-color;
@@ -77,121 +81,163 @@
                 height: 63px;
                 margin-right: 1rem;
                 color: $text-color;
-
-
             }
         }
 
-        .clients-card {
-            border-radius: 38px;
-            max-width: 500px;
-            min-height: 700px;
+        .clients-cards-container {
             display: flex;
-            flex-direction: column;
-            background: #243843;
-            padding-left: 40px;
-            padding-right: 10px;
-
-            text-align: left;
-            padding-top: 20px;
-
-            @media (max-width: map-get($breakpoints, tablet)) {
-                border-radius: 26px;
-                min-width: 335px;
-                min-height: 468px;
-            }
+            flex: 1 1 0;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0;
 
 
-            .clients-rate {
-                font-weight: 600;
-                font-size: 33px;
-                line-height: 131%;
+            .clients-card {
+                flex: 1 1 400px;
+                min-width: 500px;
+                min-height: 700px;
+                margin: 0 20px;
+                border-radius: 38px;
+                background: #243843;
+                padding: 20px 20px 10px 40px;
                 display: flex;
-                flex-direction: row;
-                align-items: center;
+                flex-direction: column;
+                text-align: left;
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-                .rate-number {
-                    color: $primary-color;
-                    margin-right: 10px;
+                @media (max-width: map-get($breakpoints, tablet)) {
+                    flex: 1 1 auto;
+                    min-width: 235px;
+                    min-height: 568px;
+                    margin: 20px 0;
+                    border-radius: 26px;
+                }
+
+                &.current {
+                    transform: translateX(10%);
+                    opacity: 1;
+
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        transform: translateX(0);
+                        margin: 15px;
+                    }
+                }
+
+                &.next {
+                    transform: translateX(50%);
+                    opacity: 1;
+
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        display: none;
+                        transform: none;
+                    }
+                }
+
+                .clients-rate-block {
+                    display: flex;
+                    align-items: center;
                     font-weight: 600;
                     font-size: 33px;
                     line-height: 131%;
-                }
 
-                .rate-stars {
-                    display: flex;
-                    gap: 5px;
+                    .rate-number {
+                        color: $primary-color;
+                        margin-right: 10px;
+                    }
 
-                    .star {
-                        width: 20px;
-                        height: 20px;
+                    .rate-stars {
+                        display: flex;
+                        gap: 5px;
+
+                        .star {
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
-            }
 
-            .underline {
-                width: 100%;
-                height: 2px;
-                background-color: #6b6565;
-                margin: 30px 0;
-                box-sizing: border-box;
-            }
+                .review-underline {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #6b6565;
+                    margin: 30px 0;
+                }
 
-            .review-text {
-                flex: 1 1;
-                font-weight: 600;
-                font-size: clamp(24px, 1vw, 28px);
-                line-height: 1.5;
-                color: $primary-color;
-                padding: 10px;
-
-                @media (max-width: map-get($breakpoints, tablet)) {
+                .review-text {
+                    flex: 1 1 auto;
                     font-weight: 600;
-                    font-size: 18px;
-                    line-height: 131%;
-                }
+                    font-size: 28px;
+                    line-height: 1.5;
+                    color: $primary-color;
+                    padding: 10px;
 
-            }
-
-            .profile {
-                display: flex;
-                align-items: center;
-                text-align: left;
-                padding-bottom: 2rem;
-
-
-
-                .profile-img {
-                    border-radius: 50%;
-                    width: 70px;
-                    height: 70px;
-                    overflow: hidden;
-                    margin-right: 15px;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-
-                .profile-info {
-                    display: flex;
-                    justify-content: end;
-                    flex-direction: column;
-
-                    .review-name {
-                        font-weight: 600;
-                        font-size: 22px;
-                        line-height: 1.5;
-                        color: $primary-color;
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        font-size: 25px;
+                        line-height: 131%;
+                        padding: 10px 20px;
                     }
 
-                    .review-title {
-                        font-weight: 400;
+                    @media (max-width: map-get($breakpoints, phone)) {
                         font-size: 18px;
-                        line-height: 1;
-                        color: $primary-color;
+
+                    }
+                }
+
+                .profile {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 2rem;
+
+                    .profile-img {
+                        border-radius: 50%;
+                        width: 70px;
+                        height: 70px;
+                        overflow: hidden;
+                        margin-right: 15px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .profile-info {
+                        display: flex;
+                        flex-direction: column;
+
+                        .review-name {
+                            font-weight: 600;
+                            font-size: 28px;
+                            line-height: 1.5;
+                            color: $primary-color;
+
+                            @media (max-width: map-get($breakpoints, tablet)) {
+                                font-size: 25px;
+
+                                @media (max-width: map-get($breakpoints, phone)) {
+                                    font-size: 18px;
+
+                                }
+                            }
+
+                        }
+
+                        .review-title {
+                            font-weight: 400;
+                            font-size: 28px;
+                            line-height: 1;
+                            color: $primary-color;
+
+                            @media (max-width: map-get($breakpoints, tablet)) {
+                                font-size: 22px;
+
+                                @media (max-width: map-get($breakpoints, phone)) {
+                                    font-size: 18px;
+
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -207,8 +253,6 @@
                 margin-top: 40px;
 
                 .pagination-dot {
-
-
                     width: 10px;
                     height: 10px;
                     border-radius: 50%;

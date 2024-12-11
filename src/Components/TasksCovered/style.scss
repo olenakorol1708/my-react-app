@@ -40,154 +40,141 @@
         @media (max-width: map-get($breakpoints, phone)) {
           margin-top: 2rem;
 
-          .title-task-word {
-            color: $secondary-color;
-            margin-right: 1rem;
-          }
-
-          // .smile-group {
-          //     display: inline-flex;
-          //     gap: 5px;
-          //     white-space: nowrap;
-
-          //     @media (max-width: map-get($breakpoints, phone)) {
-          //         margin-top: 2rem;
-          //     }
-          // }
-
           .smile {
             width: 70px;
             height: 70px;
             margin-right: 1rem;
           }
         }
-
-        .christmasToy-desktop {
-          position: absolute;
-          right: calc(-10vw - 50px);
-          top: 0;
-          transform: translateY(-60%);
-          z-index: 10;
-          max-width: 200px;
-          width: 20vw;
-
-
-          @media (max-width: map-get($breakpoints, tablet)) {
-            width: 25vw;
-            right: calc(-5vw - 50px);
-
-          }
-
-          @media (max-width: map-get($breakpoints, phone)) {
-            width: 30vw;
-            right: calc(-3vw - 50px);
-
-          }
-
-          @media (min-width: 1660px) {
-            width: 20vw;
-            right: calc(-25vw - 50px);
-          }
-        }
-
-        .black-white-toy {
-          position: absolute;
-          left: calc(-8vw - 50px);
-          bottom: -430px;
-          transform: translateY(-60%);
-          z-index: 10;
-          max-width: 200px;
-          width: 20vw;
-
-
-          @media (max-width: map-get($breakpoints, tablet)) {
-            width: 25vw;
-            left: calc(-5vw - 50px);
-
-          }
-
-          @media (max-width: map-get($breakpoints, phone)) {
-            width: 30vw;
-            left: calc(-1vw - 50px);
-
-          }
-
-          @media (min-width: 1660px) {
-            width: 20vw;
-            left: calc(-20vw - 50px);
-          }
-
-        }
-
-        .icon-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 45px;
-          justify-content: center;
-
-
-          .icon-list {
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1 1 calc(25% - 65px);
-            max-width: calc(25% - 65px);
-            flex-direction: column;
-            margin-top: 72px;
-            text-align: center;
-            list-style: none;
-
-
-            @media (max-width: 1024px) {
-              flex: 1 1 calc(50% - 30px);
-              max-width: calc(50% - 30px);
-            }
-
-          }
-        }
-
-        .icon-img {
-          width: 64px;
-          height: 64px;
-          border-radius: 30px;
-          background-color: #223540;
-          margin: 0 auto;
-
-          @media (max-width: map-get($breakpoints, tablet)) {
-            width: 55px;
-            height: 55px;
-          }
-
-          @media (max-width: map-get($breakpoints, phone)) {
-            width: 45px;
-            height: 45px;
-          }
-        }
-
-        .icon-title {
-          font-weight: 600;
-          font-size: clamp(20px, 1vw, 25px);
-          line-height: 156%;
-          color: $primary-color;
-          font-family: $main-font;
-          margin-top: 10px;
-          white-space: nowrap;
-
-          @media (max-width: map-get($breakpoints, tablet)) {
-            font-size: 20px;
-          }
-
-          @media (max-width: map-get($breakpoints, phone)) {
-            font-size: 16px;
-          }
-        }
-      }
-
-      .smile {
-        width: 70px;
-        height: 70px;
-        margin-right: 1rem;
       }
     }
+
+    .christmasToy-desktop {
+      position: absolute;
+      right: calc(-18vw - 50px);
+      top: 0;
+      transform: translateY(-60%);
+      z-index: 10;
+      max-width: 200px;
+      width: 20vw;
+
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        width: 25vw;
+        right: calc(-5vw - 50px);
+
+      }
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        width: 30vw;
+        right: calc(-3vw - 50px);
+
+      }
+
+      @media (min-width: 2060px) {
+        width: 20vw;
+        right: calc(-25vw - 50px);
+      }
+    }
+
+    .black-white-toy {
+      position: absolute;
+      left: calc(-18vw - 50px);
+      bottom: -500px;
+      transform: translateY(-60%);
+      z-index: 10;
+      max-width: 200px;
+      width: 20vw;
+
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        width: 25vw;
+        left: calc(-5vw - 50px);
+
+      }
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        width: 30vw;
+        left: calc(-1vw - 50px);
+
+      }
+
+      @media (min-width: 2060px) {
+        width: 20vw;
+        left: calc(-25vw - 50px);
+      }
+
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 45px;
+      justify-content: center;
+
+
+      .icon-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 calc(25% - 65px);
+        max-width: calc(25% - 65px);
+        flex-direction: column;
+        margin-top: 72px;
+        text-align: center;
+        list-style: none;
+
+
+        @media (max-width: 1024px) {
+          flex: 1 1 calc(50% - 30px);
+          max-width: calc(50% - 30px);
+        }
+
+      }
+    }
+
+    .icon-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 30px;
+      background-color: #223540;
+      margin: 0 auto;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        width: 55px;
+        height: 55px;
+      }
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    .icon-title {
+      font-weight: 600;
+      font-size: clamp(20px, 1vw, 25px);
+      line-height: 156%;
+      color: $primary-color;
+      font-family: $main-font;
+      margin-top: 10px;
+      white-space: nowrap;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        font-size: 20px;
+      }
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        font-size: 16px;
+      }
+    }
+
+
+    .smile {
+      width: 70px;
+      height: 70px;
+      margin-right: 1rem;
+    }
+
 
     .icon-grid {
       display: flex;
