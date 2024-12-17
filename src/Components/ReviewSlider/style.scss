@@ -14,7 +14,9 @@
         padding: 90px 20px 150px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: stretch;
         flex: 1 1;
 
         @media (max-width: map-get($breakpoints, tablet)) {
@@ -24,76 +26,87 @@
             padding: 50px 10px 70px;
         }
 
-        .review-title-block {
+
+
+        .review-title-container {
             display: flex;
-            flex: 1 1 0;
-            width: 100%;
             flex-direction: column;
-            align-items: flex-start;
             justify-content: center;
-            margin-left: 12rem;
-            padding-left: 1rem;
+            padding-right: 2rem;
+            flex: 0 0 50%;
 
-            @media (max-width: map-get($breakpoints, tablet)) {
-                margin: 0 auto;
-                align-items: center;
-                padding-left: 0;
-            }
-
-            img {
-                width: 100px;
-                height: 63px;
+            .review-title-block {
+                display: flex;
+                flex: 1 1 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-left: 10vw;
+                padding-right: 5vw;
 
                 @media (max-width: map-get($breakpoints, tablet)) {
                     margin: 0 auto;
-                }
-            }
-
-            .clients-say {
-                font-weight: 700;
-                font-size: clamp(70px, 1vw, 80px);
-                line-height: 123%;
-                letter-spacing: 0.01em;
-                text-align: left;
-                color: $primary-color;
-                margin: 30px 0;
-
-                @media (max-width: map-get($breakpoints, tablet)) {
-                    text-align: center;
-                    font-size: 55px;
+                    align-items: center;
+                    padding-left: 0;
                 }
 
-                .clients-green {
-                    color: $secondary-color;
-                }
-            }
+                img {
+                    width: 100px;
+                    height: 63px;
 
-            .review-button {
-                @media (max-width: map-get($breakpoints, tablet)) {
-                    display: none;
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        margin: 0 auto;
+                    }
                 }
-            }
 
-            .ant-btn {
-                border: 1.15px solid rgba(255, 255, 255, 0.8);
-                border-radius: 50%;
-                width: 63px;
-                height: 63px;
-                margin-right: 1rem;
-                color: $text-color;
+                .clients-say {
+                    font-weight: 700;
+                    font-size: clamp(70px, 1vw, 80px);
+                    line-height: 123%;
+                    letter-spacing: 0.01em;
+                    text-align: left;
+                    color: $primary-color;
+                    margin: 30px 0;
+
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        text-align: center;
+                        font-size: 55px;
+                    }
+
+                    .clients-green {
+                        color: $secondary-color;
+                    }
+                }
+
+                .review-button {
+                    @media (max-width: map-get($breakpoints, tablet)) {
+                        display: none;
+                    }
+                }
+
+                .ant-btn {
+                    border: 1.15px solid rgba(255, 255, 255, 0.8);
+                    border-radius: 50%;
+                    width: 63px;
+                    height: 63px;
+                    margin-right: 1rem;
+                    color: $text-color;
+                }
             }
         }
 
         .clients-cards-container {
             display: flex;
-            flex: 1 1 0;
+            flex: 0 0 50%;
             justify-content: center;
             align-items: center;
-            padding-left: 0;
+            padding-left: 2rem;
+            gap: 9rem;
 
 
             .clients-card {
-                flex: 1 1 400px;
+                flex: 1 1 500px;
                 min-width: 500px;
                 min-height: 700px;
                 margin: 0 20px;
@@ -105,16 +118,27 @@
                 text-align: left;
                 transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
+                @media (max-width: 1024px) {
+                    flex: 1 1 calc(100% - 30px); // 2 cards per row
+                    min-height: 600px; // Slightly smaller on medium screens
+                }
+
                 @media (max-width: map-get($breakpoints, tablet)) {
-                    flex: 1 1 auto;
-                    min-width: 235px;
+                    flex: 1 1 calc(100% - 20px);
+                    min-width: 200px;
                     min-height: 568px;
                     margin: 20px 0;
                     border-radius: 26px;
                 }
 
+                @media (max-width: 480px) {
+                    min-height: 400px; // Further reduce height for phones
+                    border-radius: 12px;
+                    padding: 10px; // Compact padding
+                }
+
                 &.current {
-                    transform: translateX(10%);
+
                     opacity: 1;
 
                     @media (max-width: map-get($breakpoints, tablet)) {
@@ -124,7 +148,7 @@
                 }
 
                 &.next {
-                    transform: translateX(50%);
+                    overflow: hidden;
                     opacity: 1;
 
                     @media (max-width: map-get($breakpoints, tablet)) {

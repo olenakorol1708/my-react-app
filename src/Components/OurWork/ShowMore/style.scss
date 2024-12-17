@@ -14,9 +14,15 @@
     max-width: 172px;
     max-height: 55px;
 
+    @media (max-width: map-get($breakpoints, tablet)) {
+      flex-direction: column;
+      margin: 0 auto;
+
+    }
+
     .show-button {
       border-radius: 18px;
-      // min-width: 170px;
+      min-width: 170px;
       height: 54px;
       color: $text-color;
       background-color: $primary-color !important;
@@ -25,10 +31,25 @@
       line-height: 91%;
       cursor: pointer;
       border: none;
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        font-size: 12px;
+        min-width: 120px;
+        padding: 0.8rem;
+        margin-top: -2rem;
+      }
     }
 
     .dribble-logo {
       width: 100%;
+
+      @media (max-width: map-get($breakpoints, tablet)) {
+        width: 60%;
+      }
+
+      @media (max-width: map-get($breakpoints, phone)) {
+        width: 20%;
+      }
     }
   }
 }

@@ -28,20 +28,23 @@ const ReviewSlider: React.FC = () => {
   return (
     <section className="review">
       <div className="review-slider">
-        <div className="review-title-block">
-          <img src={quotes} alt="quotes" />
-          <h3 className="clients-say">
-            What our <span className="clients-green">clients say</span>
-          </h3>
-          <div className="review-button">
-            <Button onClick={handlePrevClick}>
-              <LeftOutlined />
-            </Button>
-            <Button onClick={handleNextClick}>
-              <RightOutlined />
-            </Button>
+        <div className="review-title-container">
+          <div className="review-title-block">
+            <img src={quotes} alt="quotes" />
+            <h3 className="clients-say">
+              What our <span className="clients-green">clients say</span>
+            </h3>
+            <div className="review-button">
+              <Button onClick={handlePrevClick}>
+                <LeftOutlined />
+              </Button>
+              <Button onClick={handleNextClick}>
+                <RightOutlined />
+              </Button>
+            </div>
           </div>
         </div>
+
         <div className="clients-cards-container">
           <div className="clients-card current ">
             <div className="clients-rate-block">

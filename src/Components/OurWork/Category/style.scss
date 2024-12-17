@@ -10,7 +10,7 @@
 
   .category-title-button {
     font-weight: 600;
-    font-size: clamp(16px, 1vw, 25px);
+    font-size: clamp(18px, 1vw, 25px);
     line-height: 156%;
     color: $primary-color;
     background-color: transparent;
@@ -36,7 +36,7 @@
     .category-title-button {
       max-width: calc(33.33% - 10px);
       margin-bottom: 1.2rem;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 153%;
     }
   }
